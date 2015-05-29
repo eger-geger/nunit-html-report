@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a>Total<span class="badge">{{summary.total}}</span></a>
+                </li>
+                <li ng-class="{active: shouldDisplayResult('Passed')}">
+                    <a ng-click="toggleDisplayResult('Passed')">Passed<span class="badge">{{summary.passed}}</span></a>
+                </li>
+                <li ng-class="{active: shouldDisplayResult('Failed')}">
+                    <a ng-click="toggleDisplayResult('Failed')">Failed<span class="badge">{{summary.failed}}</span></a>
+                </li>
+                <li ng-class="{active: shouldDisplayResult('Inconclusive')}">
+                    <a ng-click="toggleDisplayResult('Inconclusive')">Inconclusive<span class="badge">{{summary.inconclusive}}</span></a>
+                </li>
+                <li ng-class="{active: shouldDisplayResult('Skipped')}">
+                    <a ng-click="toggleDisplayResult('Skipped')">Skipped<span class="badge">{{summary.skipped}}</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <input type="search" class="form-control" ng-model="query" typeahead="name as tc.name for tc in testCases | filter:$viewValue | limitTo:8" typeahead-on-select="setQueryFilterValue($item.name)" placeholder="Test Case Filter" />
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-3 dashboard-test-case" ng-repeat="tc in testCases | filter: query | filter: testCaseFilter">
+            <div class="panel" ng-class="{
+              'panel-success': tc.result == 'Passed',
+              'panel-danger': tc.result == 'Failed',
+              'panel-warning': tc.result == 'Skipped'
+            }" ng-click="openTestCase(tc)" popover="{{tc.reason.message || tc.failure.message}}" popover-title="{{tc.result}}" popover-trigger="mouseenter">
+                <div class="panel-heading">
+                    <small>{{tc.name}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h3 class="test-case-name">
+		<span ng-class="{
+			'text-success': result == 'Passed',
+			'text-danger': result == 'Failed',
+			'text-warning': result == 'Skipped'
+		}">[{{result}}] {{name}}</span>
+		<span class="label pull-right" ng-class="{
+			'label-success': result == 'Passed',
+			'label-danger': result == 'Failed',
+			'label-warning': result == 'Skipped'
+		}">{{duration}}s</span>
+		<p><small>{{classname}}</small></p>
+		</h3>
+    </div>
+    <div ng-show="!!message">
+        <h4>Message</h4>
+        <pre class="truncated">{{message}}</pre>
+        <hr/>
+    </div>
+    <div ng-show="!!output">
+        <h4>Output</h4>
+        <pre class="truncated">{{output}}</pre>
+        <hr/>
+    </div>
+    <div ng-show="!!images">
+        <h4>Screenshots</h4>
+        <carousel interval="5000">
+            <slide ng-repeat="image in images" active="slide.active">
+                <img ng-src="{{image}}" style="margin:auto;"/>
+            </slide>
+        </carousel>
+        <hr/>
+    </div>
+</div>

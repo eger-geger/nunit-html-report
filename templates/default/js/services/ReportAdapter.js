@@ -1,0 +1,94 @@
+function ReportAdapter(report) {
+    this.report = new TestSuiteWrapper(report['test-run']);
+}
+
+ReportAdapter.prototype.summary = function() {
+    return {
+        'total': this.report['total'] || 0,
+        'passed': this.report['passed'] || 0,
+        'failed': this.report['failed'] || 0,
+        'inconclusive': this.report['inconclusive'] || 0,
+        'skipped': this.report['skipped'] || 0
+    };
+};
+
+ReportAdapter.prototype.testFixtures = function() {
+    var testFixtures = [];
+
+    angular.forEach(this.report.getTestSuites(), function(testSuite) {
+        if (testSuite.isTestFixture()) testFixtures.push(testSuite);
+    });
+
+    return testFixtures;
+};
+
+ReportAdapter.prototype.testCases = function() {
+    return this.report.getTestCases();
+};
+
+ReportAdapter.prototype.findTestCaseById = function(id) {
+    var testCase;
+
+    angular.forEach(this.testCases(), function(tc) {
+        if (tc.id === id) {
+            testCase = tc;
+            return;
+        }
+    });
+
+    return testCase;
+};
+
+function TestSuiteWrapper(rawTestSuite) {
+    var self = this;
+
+    angular.forEach(rawTestSuite, function(value, key) {
+        self[key.indexOf('@') === -1 ? key : key.substring(1)] = value;
+    });
+}
+
+TestSuiteWrapper.prototype.isTestFixture = function() {
+    return this.testSuite.type === 'TestFixture';
+};
+
+TestSuiteWrapper.prototype.getTestSuites = function() {
+    var testSuites = [];
+
+    angular.forEach(toArray(this['test-suite']), function(ts) {
+        testSuites.push(new TestSuiteWrapper(ts));
+    });
+
+    return testSuites;
+};
+
+TestSuiteWrapper.prototype.getTestCases = function() {
+    var testCases = [];
+
+    angular.forEach(toArray(this['test-case']), function(testCase) {
+        testCases.push(new TestCaseWrapper(testCase));
+    });
+
+    angular.forEach(toArray(this.getTestSuites()), function(ts) {
+        testCases = testCases.concat(ts.getTestCases());
+    });
+
+    return testCases;
+};
+
+function TestCaseWrapper(rawTestCase) {
+    var self = this;
+
+    angular.forEach(rawTestCase, function(value, key) {
+        self[key.indexOf('@') === -1 ? key : key.substring(1)] = value;
+    });
+
+    if (this.images && this.images.image) {
+        this.images = toArray(this.images.image);
+    }
+}
+
+function toArray(value) {
+    return value ? angular.isArray(value) ? value : [value] : [];
+}
+
+module.exports = ['Report', ReportAdapter];
