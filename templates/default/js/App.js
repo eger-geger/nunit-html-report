@@ -1,5 +1,3 @@
-window.NUnitTestResult = require('../TestResult.json');
-
 var angular = require('angular');
 
 var application = angular.module('NUnitReport', [

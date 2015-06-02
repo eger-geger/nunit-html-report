@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
 using CommandLine;
 using NUnitReporter.Attachments;
 using NUnitReporter.NUnitReports;
@@ -9,10 +9,6 @@ namespace NUnitReporter
 {
     public class Program
     {
-        private const String TestResultJson = "TestResult.json";
-        private const String TestResultXml = "TestResult.xml";
-        private const String TestResultHtml = "TestResult.html";
-
         public static void Main(String[] args)
         {
             var options = new CommandLineOptions();
@@ -35,24 +31,22 @@ namespace NUnitReporter
                         options.OutputFolderPath));
                 }
 
-                if (options.WriteJson)
+                foreach (AbstractReportWriter writer in new List<AbstractReportWriter>
                 {
-                    new JsonReportWriter(TestResultJson).Write(nunitReport, options.OutputFolderPath);
-                }
-
-                if (options.WriteXml)
+                    options.WriteJson ? new JsonReportWriter() : null,
+                    options.WriteXml ? new XmlReportWriter() : null,
+                    options.WriteHtml ? new HtmlReportWriter() : null
+                })
                 {
-                    new XmlReportWriter(TestResultXml).Write(nunitReport, options.OutputFolderPath);
-                }
-
-                if (options.WriteHtml)
-                {
-                    new HtmlReportWriter(TestResultHtml).Write(nunitReport, options.OutputFolderPath);
+                    if (writer != null)
+                    {
+                        writer.Write(nunitReport, options.OutputFolderPath);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);
                 Console.WriteLine(options.GetUsage());
             }
         }

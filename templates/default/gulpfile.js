@@ -9,7 +9,12 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 
-gulp.task('default', ['index-html']);
+gulp.task('default', ['copy-dotnet']);
+
+gulp.task('copy-dotnet', ['index-html'], function(){
+    return gulp.src('./dist/**')
+        .pipe(gulp.dest('../../NUnitReporter/templates/default/'));
+});
 
 gulp.task('copy-resources', function(){
     gulp.src('./node_modules/bootstrap/dist/fonts/*')

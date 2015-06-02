@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml;
 using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
@@ -7,13 +8,13 @@ namespace NUnitReporter.ReportWriters
 {
     public class JsonReportWriter : AbstractReportWriter
     {
-        public JsonReportWriter(string fileName) : base(fileName)
-        {
-        }
+        private const String TestResultJson = "TestResult.json";
 
-        protected override void Write(XmlDocument document, TextWriter writer)
+        protected override void Write(XmlDocument document, String outputFolderPath)
         {
-            writer.Write(JsonConvert.SerializeXmlNode(document, Formatting.Indented));
+            File.WriteAllText(
+                Path.Combine(outputFolderPath, TestResultJson),
+                JsonConvert.SerializeXmlNode(document, Formatting.Indented));
         }
     }
 }

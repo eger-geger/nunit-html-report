@@ -7,13 +7,6 @@ namespace NUnitReporter.ReportWriters
 {
     public abstract class AbstractReportWriter
     {
-        private readonly String _fileName;
-
-        protected AbstractReportWriter(String fileName)
-        {
-            _fileName = fileName;
-        }
-
         public void Write(INUnitTestResult testResult, String outputFolderPath)
         {
             if (testResult == null)
@@ -26,18 +19,11 @@ namespace NUnitReporter.ReportWriters
                 throw new ArgumentNullException("outputFolderPath");
             }
 
-            if (!Directory.Exists(outputFolderPath))
-            {
-                Directory.CreateDirectory(outputFolderPath);
-            }
+            Directory.CreateDirectory(outputFolderPath);
 
-            using (var writer = new StreamWriter(Path.Combine(outputFolderPath, _fileName)))
-            {
-                Write(testResult.XmlDocument, writer);    
-            }
+            Write(testResult.XmlDocument, outputFolderPath);
         }
 
-        protected abstract void Write(XmlDocument document, TextWriter writer);
-
+        protected abstract void Write(XmlDocument document, String outputFolderPath);
     }
 }

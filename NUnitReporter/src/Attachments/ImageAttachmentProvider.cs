@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -18,7 +19,11 @@ namespace NUnitReporter.Attachments
         public ImageAttachmentProvider(string imageFolderPath, string outputFolderPath)
         {
             Validate.FolderPath(imageFolderPath, "imageFolderPath");
-            Validate.FolderPath(outputFolderPath, "outputFolderPath");
+
+            if (String.IsNullOrEmpty(outputFolderPath))
+            {
+                throw new ArgumentException("Folder path is null or empty", "outputFolderPath");
+            }
 
             _imageFolderAbsolutePath = Path.GetFullPath(imageFolderPath);
             _outputFolderAsolutePath = Path.GetFullPath(outputFolderPath);
@@ -29,7 +34,8 @@ namespace NUnitReporter.Attachments
             get
             {
                 return ImageFileSearchPatterns
-                    .SelectMany(pattern => Directory.GetFiles(_imageFolderAbsolutePath, pattern));
+                    .SelectMany(pattern => Directory.GetFiles(_imageFolderAbsolutePath, pattern))
+                    .Select(Path.GetFullPath);
             }
         }
 
@@ -50,7 +56,13 @@ namespace NUnitReporter.Attachments
 
         public IEnumerable<string> GetTestCaseAttachments(string testCaseId)
         {
-            var outputFolderUri = new Uri(_outputFolderAsolutePath, UriKind.Absolute);
+            var pathSeparator = Path.DirectorySeparatorChar.ToString(CultureInfo.InvariantCulture);
+
+            var outputFolderUri = new Uri(
+                _outputFolderAsolutePath.EndsWith(pathSeparator) 
+                    ? _outputFolderAsolutePath
+                    : _outputFolderAsolutePath + pathSeparator, 
+                    UriKind.Absolute);
 
             return Images
                 .Where(path => (Path.GetFileNameWithoutExtension(path) ?? String.Empty).Contains(testCaseId))

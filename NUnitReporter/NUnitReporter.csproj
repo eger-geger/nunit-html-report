@@ -74,14 +74,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="templates\default.html" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\css\bootstrap.min.css" />
+    <EmbeddedResource Include="templates\default\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <EmbeddedResource Include="templates\default\index.html" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy "$(SolutionDir)templates\default\dist\index.html" "$(ProjectDir)templates\default.html"</PreBuildEvent>
+    <PreBuildEvent>gulp --cwd "$(SolutionDir)templates\default"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
