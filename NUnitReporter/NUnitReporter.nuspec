@@ -16,6 +16,7 @@
     </metadata>
     <files>
        <file src="bin\Release\*.dll" target="tools" />
-       <file src="bin\Release\*.exe" target="tools" />
+       <file src="bin\Release\nure.exe" target="tools" />
+       <file src="bin\Release\nure.exe.config" target="tools" />
     </files>
 </package>
