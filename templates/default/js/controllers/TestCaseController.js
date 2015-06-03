@@ -1,6 +1,3 @@
-var jquery = require('jquery');
-var slick = require('slick-carousel');
-
 function TestCaseController($scope, $routeParams, $location, reportAdapter) {
 	var testCase = reportAdapter.findTestCaseById($routeParams.id);
 
@@ -15,8 +12,6 @@ function TestCaseController($scope, $routeParams, $location, reportAdapter) {
     $scope.message = getMessage(testCase);
     $scope.duration = testCase.duration;
     $scope.classname = testCase.classname;
-
-    jquery('.slick-carousel').slick();
 }
 
 function getMessage(testCase){
