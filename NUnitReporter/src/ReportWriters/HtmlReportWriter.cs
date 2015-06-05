@@ -13,7 +13,7 @@ namespace NUnitReporter.ReportWriters
     {
         private const String TestResultHtml = "TestResult.html";
 
-        private const String TemplateResoucePath = "templates.default";
+        private const String TemplateResoucePath = "NUnitReporter.templates.default";
 
         private const String TemplateIndexFileName = "index.html";
 
@@ -53,7 +53,7 @@ namespace NUnitReporter.ReportWriters
 
         private static String GetTemplateResourceName(String relativePath)
         {
-            return String.Format("{0}.{1}.{2}", Assembly.GetName().Name, TemplateResoucePath, relativePath);
+            return String.Format("{0}.{1}", TemplateResoucePath, relativePath);
         }
 
         protected override void Write(XmlDocument document, String outputFolderPath)
