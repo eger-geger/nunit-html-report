@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
     <metadata>
-        <id>NUnitReporter</id>
+        <id>nure</id>
         <version>1.0.0.0</version>
-        <title>NUnitReporter</title>
+        <title>nure</title>
         <authors>Ivan Mihaylovskyy</authors>
         <owners>Ivan Mihaylovskyy</owners>
         <licenseUrl>https://raw.githubusercontent.com/eger-geger/nunit-html-report/master/LICENSE</licenseUrl>
