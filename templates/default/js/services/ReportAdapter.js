@@ -62,6 +62,8 @@ TestSuiteWrapper.prototype.getTestSuites = function() {
 };
 
 TestSuiteWrapper.prototype.getTestCases = function() {
+    var categories = this.getCategories();
+    
     var testCases = [];
 
     angular.forEach(toArray(this['test-case']), function(testCase) {
@@ -72,8 +74,14 @@ TestSuiteWrapper.prototype.getTestCases = function() {
         testCases = testCases.concat(ts.getTestCases());
     });
 
+    angular.forEach(testCases, function(tc){
+        tc.setCategories(categories);
+    });
+
     return testCases;
 };
+
+TestSuiteWrapper.prototype.getCategories = getTestCategories;
 
 function TestCaseWrapper(rawTestCase) {
     var self = this;
@@ -85,6 +93,28 @@ function TestCaseWrapper(rawTestCase) {
     if (this.images && this.images.image) {
         this.images = toArray(this.images.image);
     }
+
+    this.categories = [];
+}
+
+TestCaseWrapper.prototype.setCategories = function(categories){
+    this.categories = this.categories.concat(categories);
+};
+
+TestCaseWrapper.prototype.getCategories = function(){
+    return this.categories.concat(getTestCategories.apply(this));
+}
+
+function getTestCategories(){
+    var categories = [];
+
+    angular.forEach(toArray(this.properties && this.properties.property), function(prop){
+        if(prop['@name'] === 'Category' && prop['@value']){
+            categories.push(prop['@value']);
+        }
+    });
+
+    return categories;
 }
 
 function toArray(value) {
