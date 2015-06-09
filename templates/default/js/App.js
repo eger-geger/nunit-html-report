@@ -9,6 +9,7 @@ var application = angular.module('NUnitReport', [
 
 application.factory('Report', require('./services/ReportFactory'));
 application.service('ReportAdapter', require('./services/ReportAdapter'));
+application.service('StateStorage', require('./services/StateStorage'));
 application.controller('DashboardController', require('./controllers/DashboardController'));
 application.controller('TestcaseController', require('./controllers/TestcaseController'));
 

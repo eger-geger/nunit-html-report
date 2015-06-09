@@ -1,5 +1,7 @@
-function DashboardController($scope, $location, reportAdapter) {
-    var displayMap = {};
+var displayMapCookieKey = "DashboardController.displayMap";
+
+function DashboardController($scope, $location, StateStorage, reportAdapter) {
+    var displayMap = StateStorage.get(displayMapCookieKey) || {};
 
     $scope.testCaseFilter = function(testCase) {
         return $scope.shouldDisplayResult(testCase.result);
@@ -15,6 +17,7 @@ function DashboardController($scope, $location, reportAdapter) {
 
     $scope.toggleDisplayResult = function(resultType) {
         displayMap[resultType] = !$scope.shouldDisplayResult(resultType);
+        StateStorage.put(displayMapCookieKey, displayMap);
     };
 
     $scope.openTestCase = function(testCase) {
@@ -29,4 +32,4 @@ function DashboardController($scope, $location, reportAdapter) {
     $scope.testCases = reportAdapter.testCases();
 }
 
-module.exports = ['$scope', '$location', 'ReportAdapter', DashboardController];
+module.exports = ['$scope', '$location', 'StateStorage', 'ReportAdapter', DashboardController];
