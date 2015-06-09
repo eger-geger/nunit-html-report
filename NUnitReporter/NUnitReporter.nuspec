@@ -2,7 +2,7 @@
 <package >
     <metadata>
         <id>nure</id>
-        <version>1.0.0.0</version>
+        <version>1.0.0.1</version>
         <title>nure</title>
         <authors>Ivan Mihaylovskyy</authors>
         <owners>Ivan Mihaylovskyy</owners>
@@ -10,7 +10,7 @@
         <projectUrl>https://github.com/eger-geger/nunit-html-report</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Generates HTML report from NUnit3 TestResult.xml</description>
-        <releaseNotes>Initial release</releaseNotes>
+        <releaseNotes>Persist filter selection on dashboard</releaseNotes>
         <copyright>Copyright 2015</copyright>
         <tags>nunit reports</tags>
     </metadata>
