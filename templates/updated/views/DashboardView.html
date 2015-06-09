@@ -58,9 +58,11 @@
     </div>
     <div ng-show="!!currentTestCase.images">
         <h4>Screenshots</h4>
-        <div ng-repeat="image in currentTestCase.images">
-            <img ng-src="{{image}}" style="margin:auto;"/>
-        </div>
+        <carousel interval="5000">
+            <slide ng-repeat="image in currentTestCase.images" active="slide.active">
+                <img ng-src="{{image}}" style="margin:auto;"/>
+            </slide>
+        </carousel>
         <hr/>
     </div>
 </div>

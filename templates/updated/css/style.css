@@ -91,29 +91,6 @@ pre.truncated {
 	font-size: 20px;
 }
 
-/* animations */
-.view.ng-enter, .view.ng-leave {
-  	transition:0.5s linear all;
-  	position:fixed;
-  	left:0;
-  	top:0;
-  	width:100%;
-}
-
-.view.ng-enter {
-  	transform:translateX(100%);
-}
-
-.view.ng-leave,
-.view.ng-enter.ng-enter-active {
-  	transform:translateX(0%);
-}
-
-.view.ng-leave.ng-leave-active {
-  	transform:translateX(-100%);
-}
-/* animation */
-
 /* angular-ui-bootstrap compitibility hack */
 .nav, 
 .pagination, 

@@ -9,19 +9,19 @@ var application = angular.module('NUnitReport', [
 
 application.factory('Report', require('./services/ReportFactory'));
 application.service('ReportAdapter', require('./services/ReportAdapter'));
+application.service('StateStorage', require('./services/StateStorage'));
 application.controller('DashboardController', require('./controllers/DashboardController'));
-application.controller('TestcaseController', require('./controllers/TestcaseController'));
 
 application.config(['$routeProvider',
     function($routeProvider) {
-        $routeProvider.when('/dashboard', {
+        $routeProvider.when('/testcase/:id', {
             templateUrl: 'views/DashboardView.html',
             controller: 'DashboardController'
-        }).when('/testcase/:id', {
-            templateUrl: 'views/TestCaseView.html',
-            controller: 'TestcaseController'
+        }).when('/testcase', {
+            templateUrl: 'views/DashboardView.html',
+            controller: 'DashboardController'
         }).otherwise({
-            redirectTo: '/dashboard'
+            redirectTo: '/testcase'
         });
     }
 ]);
