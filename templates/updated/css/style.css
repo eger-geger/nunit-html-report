@@ -1,0 +1,124 @@
+.left-menu{
+	max-width: 500px;
+	margin-top: 40px;
+}
+
+.nav a, a.list-group-item {
+	cursor: pointer;
+}
+
+.nav-pills>li.active>a{
+	color: #777;
+	background-color: #eee;
+  	border-radius: 0;
+}
+
+.nav-filter li{
+	border-left: 1px solid #ccc;
+}
+
+.nav-filter li:first-child {
+  border: none;
+}
+
+.nav-pills>li.active>a:hover{
+	background-color: #4CAAFA;
+}
+
+.nav-pills>.active>a>.badge{
+	color: #008AFF;
+}
+
+.success{
+	color: #3c763d;
+	background-color: #dff0d8;
+}
+
+.failed{
+	color: #a94442;
+	background-color: #f2dede;
+}
+
+.inconclusive{
+	color: #31708f;
+	background-color: #d9edf7;
+}
+
+.skipped{
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+}
+
+.label {
+  margin-left: 15px;
+}
+
+.container-fluid{
+	display: inline-block;
+	float: left;
+}
+
+.main-content{
+	max-width: 1250px;
+}
+
+.list-group-item{
+	word-wrap: break-word;
+}
+
+.form-control, .nav.nav-pills.nav-justified{
+	margin-bottom: 15px;
+}
+
+.nav.nav-pills.nav-justified{
+	border: 1px solid #ccc;
+	border-radius: 5px;	
+}
+
+.nav {
+	margin-top: 2px;
+}
+
+pre.truncated {
+	max-height: 400px;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.test-case-name{
+	font-size: 20px;
+}
+
+/* animations */
+.view.ng-enter, .view.ng-leave {
+  	transition:0.5s linear all;
+  	position:fixed;
+  	left:0;
+  	top:0;
+  	width:100%;
+}
+
+.view.ng-enter {
+  	transform:translateX(100%);
+}
+
+.view.ng-leave,
+.view.ng-enter.ng-enter-active {
+  	transform:translateX(0%);
+}
+
+.view.ng-leave.ng-leave-active {
+  	transform:translateX(-100%);
+}
+/* animation */
+
+/* angular-ui-bootstrap compitibility hack */
+.nav, 
+.pagination, 
+.carousel, 
+.panel-title a { 
+	cursor: pointer; 
+}
+/* angular-ui-bootstrap compitibility hack */
