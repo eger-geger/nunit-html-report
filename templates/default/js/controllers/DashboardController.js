@@ -1,6 +1,6 @@
 var displayMapCookieKey = "DashboardController.displayMap";
 
-function DashboardController($scope, $location, StateStorage, reportAdapter) {
+function DashboardController($scope, $location, $routeParams, StateStorage, reportAdapter) {
     var displayMap = StateStorage.get(displayMapCookieKey) || {};
 
     $scope.testCaseFilter = function(testCase) {
@@ -28,8 +28,12 @@ function DashboardController($scope, $location, StateStorage, reportAdapter) {
         $scope.query = item;
     };
 
-    $scope.summary = reportAdapter.summary();
     $scope.testCases = reportAdapter.testCases();
+    $scope.summary = reportAdapter.summary();
+
+    $scope.currentTestCase = $routeParams.id 
+        ? reportAdapter.findTestCaseById($routeParams.id)
+        : $scope.testCases[0];
 }
 
-module.exports = ['$scope', '$location', 'StateStorage', 'ReportAdapter', DashboardController];
+module.exports = ['$scope', '$location', '$routeParams', 'StateStorage', 'ReportAdapter', DashboardController];

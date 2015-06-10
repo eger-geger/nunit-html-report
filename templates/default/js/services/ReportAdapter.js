@@ -105,6 +105,20 @@ TestCaseWrapper.prototype.getCategories = function(){
     return this.categories.concat(getTestCategories.apply(this));
 }
 
+TestCaseWrapper.prototype.getMessage = function(){
+    if(this.reason && this.reason.message){
+        return this.reason.message;
+    }
+
+    if(this.failure && this.failure.message){
+        return this.failure.message;
+    }
+
+    if(this.errorMessage && this['stack-trace']){
+        return this.errorMessage + "\n" + this['stack-trace'];
+    }
+};
+
 function getTestCategories(){
     var categories = [];
 
