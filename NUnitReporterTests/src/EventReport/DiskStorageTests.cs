@@ -1,27 +1,27 @@
 ﻿using System;
 using System.IO;
 using NUnit.Framework;
-using NUnitReporter.ActionReport;
+using NUnitReporter.EventReport;
 
-namespace NUnitReporterTests.ActionReport
+namespace NUnitReporterTests.EventReport
 {
-    public class DiskReportStorageTests
+    public class DiskStorageTests
     {
         private static readonly string WorkingDirectory = Path.Combine(TestContext.CurrentContext.TestDirectory,
             "disk_storage_tests");
 
-        private readonly IActionReport _report = new DefaultActionReport();
+        private readonly IEventReport _report = new NUnitReporter.EventReport.DefaultEventReport();
 
-        private readonly DiskReportStorage _storage = new DiskReportStorage(WorkingDirectory);
+        private readonly DiskStorage _storage = new DiskStorage(WorkingDirectory);
 
         [OneTimeSetUp]
         public void SetUpReport()
         {
-            var actionGuid = _report.ActionStarted("take a rest", "couch");
-            _report.ActionTaken("went home", "car", "legs");
-            _report.ImageTaken("sleeping_beauty.png");
-            _report.ActionFinished(actionGuid);
-            _report.ErrorThrown(new InvalidOperationException("It's Monday noon. Get up and work!"));
+            var actionGuid = _report.RecordActivityStarted("take a rest", "couch");
+            _report.RecordEvent("went home", "car", "legs");
+            _report.RecordScreenshot("sleeping_beauty.png");
+            _report.RecordActivityFinished(actionGuid);
+            _report.RecordError(new InvalidOperationException("It's Monday noon. Get up and work!"));
         }
 
         [SetUp]

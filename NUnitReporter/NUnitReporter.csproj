@@ -81,17 +81,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\ActionReport\Actions\ComplexAction.cs" />
-    <Compile Include="src\ActionReport\Actions\RootAction.cs" />
-    <Compile Include="src\ActionReport\Actions\ScreenshotAction.cs" />
-    <Compile Include="src\ActionReport\Actions\SimpleAction.cs" />
-    <Compile Include="src\ActionReport\DefaultActionReportFactory.cs" />
-    <Compile Include="src\ActionReport\DiskReportStorage.cs" />
-    <Compile Include="src\ActionReport\IAction.cs" />
-    <Compile Include="src\ActionReport\IActionReportFactory.cs" />
-    <Compile Include="src\ActionReport\IActionReportStorage.cs" />
-    <Compile Include="src\ActionReport\DefaultActionReport.cs" />
-    <Compile Include="src\ActionReport\IActionReport.cs" />
+    <Compile Include="src\EventReport\Events\AbstractActivity.cs" />
+    <Compile Include="src\EventReport\Events\Activity.cs" />
+    <Compile Include="src\EventReport\Events\ErrorEvent.cs" />
+    <Compile Include="src\EventReport\Events\RootActivity.cs" />
+    <Compile Include="src\EventReport\Events\ScreenshotEvent.cs" />
+    <Compile Include="src\EventReport\Events\BasicEvent.cs" />
+    <Compile Include="src\EventReport\EventReportFactory.cs" />
+    <Compile Include="src\EventReport\DiskStorage.cs" />
+    <Compile Include="src\EventReport\IActivity.cs" />
+    <Compile Include="src\EventReport\IEventReportFactory.cs" />
+    <Compile Include="src\EventReport\IEventStorage.cs" />
+    <Compile Include="src\EventReport\DefaultEventReport.cs" />
+    <Compile Include="src\EventReport\IEventReport.cs" />
     <Compile Include="src\Attachments\IAttachmentProvider.cs" />
     <Compile Include="src\CommandLineOptions.cs" />
     <Compile Include="src\Attachments\ImageAttachmentProvider.cs" />

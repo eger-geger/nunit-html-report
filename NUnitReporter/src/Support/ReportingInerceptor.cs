@@ -1,14 +1,14 @@
 ﻿using System;
 using Castle.DynamicProxy;
-using NUnitReporter.ActionReport;
+using NUnitReporter.EventReport;
 
 namespace NUnitReporter.Support
 {
     public class ReportingInerceptor : IInterceptor
     {
-        private readonly IActionReportFactory _reportFactory;
+        private readonly IEventReportFactory _reportFactory;
 
-        public ReportingInerceptor(IActionReportFactory reportFactory)
+        public ReportingInerceptor(IEventReportFactory reportFactory)
         {
             _reportFactory = reportFactory;
         }
@@ -27,9 +27,9 @@ namespace NUnitReporter.Support
             }
         }
 
-        private static void ProceedAndReport(IInvocation invocation, IActionReport report)
+        private static void ProceedAndReport(IInvocation invocation, IEventReport report)
         {
-            String actionGuid = report.ActionStarted(invocation.Method.Name, invocation.Arguments);
+            String actionGuid = report.RecordActivityStarted(invocation.Method.Name, invocation.Arguments);
 
             try
             {
@@ -37,14 +37,14 @@ namespace NUnitReporter.Support
             }
             catch (Exception ex)
             {
-                report.ErrorThrown(ex);
+                report.RecordError(ex);
                 throw;
             }
             finally
             {
                 if (!String.IsNullOrEmpty(actionGuid))
                 {
-                    report.ActionFinished(actionGuid);
+                    report.RecordActivityFinished(actionGuid);
                 }
             }
         }

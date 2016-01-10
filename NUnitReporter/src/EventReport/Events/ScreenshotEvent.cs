@@ -1,23 +1,20 @@
 ﻿using Newtonsoft.Json;
 
-namespace NUnitReporter.ActionReport.Actions
+namespace NUnitReporter.EventReport.Events
 {
     [JsonObject(MemberSerialization.OptIn)]
-    internal class ScreenshotAction : SimpleAction
+    internal class ScreenshotEvent : AbstractActivity
     {
-        private const string ActionDescription = "The screen-shot was taken";
-
         [JsonProperty]
         private readonly string _filePath;
 
         [JsonConstructor]
-        protected ScreenshotAction() : base()
+        protected ScreenshotEvent()
         {
             
         }
 
-        public ScreenshotAction(IAction parent, string imageFilePath)
-            : base(parent, ActionDescription, new[] {imageFilePath})
+        public ScreenshotEvent(IActivity parent, string imageFilePath) : base(parent)
         {
             _filePath = imageFilePath;
         }
@@ -27,10 +24,10 @@ namespace NUnitReporter.ActionReport.Actions
             get { return _filePath; }
         }
 
-        protected bool Equals(ScreenshotAction other)
+        protected bool Equals(ScreenshotEvent other)
         {
             return base.Equals(other) 
-                && string.Equals(FilePath, other.FilePath);
+                && string.Equals(_filePath, other._filePath);
         }
 
         public override bool Equals(object obj)
@@ -38,14 +35,14 @@ namespace NUnitReporter.ActionReport.Actions
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((ScreenshotAction) obj);
+            return Equals((ScreenshotEvent) obj);
         }
 
         public override int GetHashCode()
         {
             var hashcode = base.GetHashCode();
 
-            hashcode = (hashcode * 397) ^ (FilePath?.GetHashCode() ?? 0);
+            hashcode = (hashcode * 397) ^ (_filePath?.GetHashCode() ?? 0);
 
             return hashcode;
         }

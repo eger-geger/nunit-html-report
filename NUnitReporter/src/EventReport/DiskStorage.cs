@@ -2,13 +2,13 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace NUnitReporter.ActionReport
+namespace NUnitReporter.EventReport
 {
     /// <summary>
     ///     Stores and reads action reports on disk. 
     ///     Beware of <see cref="IOException"/> which may be thrown when writing or reading report failed.
     /// </summary>
-    public class DiskReportStorage : IActionReportStorage
+    public class DiskStorage : IEventStorage
     {
         private readonly JsonSerializer _serializer;
         private readonly Lazy<DirectoryInfo> _workingDirectory;
@@ -18,7 +18,7 @@ namespace NUnitReporter.ActionReport
         /// </summary>
         /// <param name="workingDirectoryPath">Folder where reports will be stored</param>
         /// <exception cref="ArgumentNullException">Thrown when provided path is null or empty</exception>
-        public DiskReportStorage(string workingDirectoryPath)
+        public DiskStorage(string workingDirectoryPath)
         {
             if (string.IsNullOrEmpty(workingDirectoryPath))
             {
@@ -26,6 +26,7 @@ namespace NUnitReporter.ActionReport
             }
 
             _workingDirectory = new Lazy<DirectoryInfo>(() => CreateDirectoryIfNotExist(workingDirectoryPath));
+
             _serializer = JsonSerializer.CreateDefault(new JsonSerializerSettings
             {
                TypeNameHandling = TypeNameHandling.Objects,
@@ -38,7 +39,7 @@ namespace NUnitReporter.ActionReport
         /// </summary>
         /// <param name="id">NUnit test unique identifier</param>
         /// <param name="report">Instance of action report</param>
-        public void Save(string id, IActionReport report)
+        public void Save(string id, IEventReport report)
         {
             var outputFile = GetReportFile(id);
 
@@ -58,7 +59,7 @@ namespace NUnitReporter.ActionReport
         /// </summary>
         /// <param name="id">NUnit test unique identifier</param>
         /// <returns>Instance of action report associated with provided identifier</returns>
-        public IActionReport Get(string id)
+        public IEventReport Get(string id)
         {
             var reportFile = GetReportFile(id);
 
@@ -69,7 +70,7 @@ namespace NUnitReporter.ActionReport
 
             using (var reader = new JsonTextReader(new StreamReader(reportFile.OpenRead())))
             {
-                return _serializer.Deserialize<IActionReport>(reader);
+                return _serializer.Deserialize<IEventReport>(reader);
             }
         }
 

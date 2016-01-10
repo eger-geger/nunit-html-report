@@ -1,15 +1,15 @@
-﻿namespace NUnitReporter.ActionReport
+﻿namespace NUnitReporter.EventReport
 {
     /// <summary>
-    /// Cretes instances of <see cref="IActionReport"/>
+    /// Cretes instances of <see cref="IEventReport"/>
     /// </summary>
-    public interface IActionReportFactory
+    public interface IEventReportFactory
     {
 
         /// <summary>
         /// Get action report for current test
         /// </summary>
         /// <returns>Action report or null when report cannot be created</returns>
-        IActionReport CurrentTestReport { get; }
+        IEventReport CurrentTestReport { get; }
     }
 }

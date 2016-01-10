@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace NUnitReporter.ActionReport.Actions
+namespace NUnitReporter.EventReport.Events
 {
     [JsonObject(MemberSerialization.OptIn)]
-    internal class RootAction : IAction
+    public class RootActivity : IActivity
     {
         [JsonProperty]
-        private readonly IList<IAction> _nested;
+        private readonly IList<IActivity> _nested;
 
         [JsonProperty]
         private readonly Guid _guid;
 
-        public RootAction()
+        public RootActivity()
         {
-            _nested = new List<IAction>();
+            _nested = new List<IActivity>();
             _guid = Guid.NewGuid();
         }
 
@@ -25,37 +25,24 @@ namespace NUnitReporter.ActionReport.Actions
             get { return _guid; }
         }
 
-        public IAction Parent
+        public IActivity Parent
         {
             get { return null; }
         }
 
-        public string Description
+        public IEnumerable<IActivity> Nested
         {
-            get { return string.Empty; }
+            get { return _nested ?? Enumerable.Empty<IActivity>(); }
         }
 
-        public IEnumerable<object> Arguments
+        public void AddNested(IActivity activity)
         {
-            get { return Enumerable.Empty<object>(); }
+            _nested.Add(activity);
         }
 
-        public IEnumerable<IAction> Nested
+        protected bool Equals(RootActivity other)
         {
-            get { return _nested ?? Enumerable.Empty<IAction>(); }
-        }
-
-        public void AddNested(IAction action)
-        {
-            _nested.Add(action);
-        }
-
-        protected bool Equals(RootAction other)
-        {
-            var guidEqual = Guid.Equals(other.Guid); 
-            var sequenceEqual= _nested.SequenceEqual(other._nested);
-
-            return guidEqual && sequenceEqual;
+            return Guid.Equals(other.Guid) && _nested.SequenceEqual(other._nested);
         }
 
         public override bool Equals(object obj)
@@ -63,7 +50,7 @@ namespace NUnitReporter.ActionReport.Actions
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((RootAction) obj);
+            return Equals((RootActivity) obj);
         }
 
         public override int GetHashCode()
