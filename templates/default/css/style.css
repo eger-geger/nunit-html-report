@@ -1,19 +1,12 @@
-.left-menu{
-	max-width: 500px;
-	margin-top: 40px;
+.container-fluid {
+	padding-top: 1em;
 }
 
 .nav a, a.list-group-item {
 	cursor: pointer;
 }
 
-.nav-pills>li.active>a{
-	color: #777;
-	background-color: #eee;
-  	border-radius: 0;
-}
-
-.nav-filter li{
+.nav-filter li {
 	border-left: 1px solid #ccc;
 }
 
@@ -21,81 +14,78 @@
   border: none;
 }
 
-.nav-pills>li.active>a:hover{
+.nav-pills li.active a {
+	color: #777;
+	background-color: #eee;
+  	border-radius: 0;
+}
+
+.nav-pills li.active a:hover {
 	background-color: #4CAAFA;
 }
 
-.nav-pills>.active>a>.badge{
+.nav-pills li.active .badge {
 	color: #008AFF;
 }
 
-.success{
+.success {
 	color: #3c763d;
 	background-color: #dff0d8;
 }
 
-.failed{
+.failed {
 	color: #a94442;
 	background-color: #f2dede;
 }
 
-.inconclusive{
+.inconclusive {
 	color: #31708f;
 	background-color: #d9edf7;
 }
 
-.skipped{
+.skipped {
 	color: #8a6d3b;
 	background-color: #fcf8e3;
 }
 
-.label {
-  margin-left: 15px;
-}
-
-.container-fluid{
-	display: inline-block;
-	float: left;
-}
-
-.main-content{
-	max-width: 1250px;
-}
-
-.list-group-item{
+.list-group-item {
 	word-wrap: break-word;
 }
 
-.form-control, .nav.nav-pills.nav-justified{
-	margin-bottom: 15px;
+.form-control, .nav.nav-pills.nav-justified {
+	margin-bottom: 1em;
 }
 
-.nav.nav-pills.nav-justified{
+.nav.nav-pills.nav-justified {
 	border: 1px solid #ccc;
 	border-radius: 5px;	
 }
 
-.nav {
-	margin-top: 2px;
+pre.truncated {
+	max-height: 20em;
 }
 
-pre.truncated {
-	max-height: 400px;
+.carousel img {
+	width: 100%;
+}
+
+.carousel-indicators li {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators li.active {
+	border-color: rgba(0, 0, 0, 0.5);
 }
 
 .clickable {
 	cursor: pointer;
 }
 
-.test-case-name{
-	font-size: 20px;
+.page-header {
+	margin-top: 0;
 }
 
-/* angular-ui-bootstrap compitibility hack */
-.nav, 
-.pagination, 
-.carousel, 
-.panel-title a { 
-	cursor: pointer; 
+.test-case-name {
+	font-size: 1.5em;
+	margin-top: 0;
 }
-/* angular-ui-bootstrap compitibility hack */

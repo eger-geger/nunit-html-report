@@ -1,36 +1,56 @@
-<div class="container-fluid">
-    <div class="left-menu">
-        <ul class="nav nav-pills nav-justified nav-filter">
-            <li>
-                <a>Total<span class="badge">{{summary.total}}</span></a>
-            </li>
-            <li ng-class="{active: shouldDisplayResult('Passed')}">
-                <a ng-click="toggleDisplayResult('Passed')">Passed<span class="badge success">{{summary.passed}}</span></a>
-            </li>
-            <li ng-class="{active: shouldDisplayResult('Failed')}">
-                <a ng-click="toggleDisplayResult('Failed')">Failed<span class="badge failed">{{summary.failed}}</span></a>
-            </li>
-            <li ng-class="{active: shouldDisplayResult('Inconclusive')}">
-                <a ng-click="toggleDisplayResult('Inconclusive')">Inconclusive<span class="badge inconclusive">{{summary.inconclusive}}</span></a>
-            </li>
-            <li ng-class="{active: shouldDisplayResult('Skipped')}">
-                <a ng-click="toggleDisplayResult('Skipped')">Skipped<span class="badge skipped">{{summary.skipped}}</span></a>
-            </li>
-        </ul>
-        <input type="search" class="form-control" ng-model="query" typeahead="name as tc.name for tc in testCases | filter:$viewValue | limitTo:8" typeahead-on-select="setQueryFilterValue($item.name)" placeholder="Test Case Filter" />
-        <ul class="list-group">
-            <a class="list-group-item" ng-class="{
-                  'list-group-item-success': tc.result == 'Passed',
-                  'list-group-item-danger': tc.result == 'Failed',
-                  'list-group-item-warning': tc.result == 'Skipped',
-                  'list-group-item-info': tc.result == 'Inconclusive'
-                }" ng-click="openTestCase(tc)" popover-title="{{tc.result}}" popover-trigger="mouseenter" ng-repeat="tc in testCases | filter: query | filter: testCaseFilter">
-                <small>{{tc.name}}</small>
+<div class="left-menu col-md-4">
+    <ul class="nav nav-pills nav-justified nav-filter">
+        <li ng-class="{active: isResultTypeAny()}">
+            <a ng-click="setAnyResultType()">
+                Total <span class="badge">{{summary.total}}</span>
             </a>
-        </ul>
-    </div>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Passed')}">
+            <a ng-click="setActiveResultType('Passed')">
+                Passed <span class="badge success">{{summary.passed}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Failed')}">
+            <a ng-click="setActiveResultType('Failed')">
+                Failed <span class="badge failed">{{summary.failed}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Inconclusive')}">
+            <a ng-click="setActiveResultType('Inconclusive')">
+                Inconclusive <span class="badge inconclusive">{{summary.inconclusive}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Skipped')}">
+            <a ng-click="setActiveResultType('Skipped')">
+                Skipped <span class="badge skipped">{{summary.skipped}}</span>
+            </a>
+        </li>
+    </ul>
+    <input 
+        type="search" 
+        class="form-control" 
+        ng-model="query" 
+        uib-typeahead="name as tc.name for tc in testCases | filter:$viewValue | limitTo:8" 
+        typeahead-on-select="setQueryFilterValue($item.name)" 
+        placeholder="Test Case Filter" 
+    />
+    <ul class="list-group">
+        <a 
+            class="list-group-item" 
+            ng-class="{
+              'list-group-item-success': tc.result == 'Passed',
+              'list-group-item-danger': tc.result == 'Failed',
+              'list-group-item-warning': tc.result == 'Skipped',
+              'list-group-item-info': tc.result == 'Inconclusive'
+            }" 
+            ng-click="openTestCase(tc)" 
+            ng-repeat="tc in testCases | filter: query | filter: testCaseFilter"
+        >
+            <small>{{tc.name}}</small>
+        </a>
+    </ul>
 </div>
-<div class="container-fluid main-content">
+<div class="col-md-8">
     <div class="page-header">
         <h3 class="test-case-name">
         <span ng-class="{
@@ -58,11 +78,11 @@
     </div>
     <div ng-show="!!currentTestCase.images">
         <h4>Screenshots</h4>
-        <carousel interval="5000">
-            <slide ng-repeat="image in currentTestCase.images" active="slide.active">
+        <uib-carousel interval="5000" class=".carousel">
+            <uib-slide ng-repeat="image in currentTestCase.images" active="slide.active">
                 <img ng-src="{{image}}" style="margin:auto;"/>
-            </slide>
-        </carousel>
+            </uib-slide>
+        </uib-carousel>
         <hr/>
     </div>
 </div>

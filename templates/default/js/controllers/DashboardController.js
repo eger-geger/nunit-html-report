@@ -1,23 +1,28 @@
-var displayMapCookieKey = "DashboardController.displayMap";
+var RESULT_TYPE_ANY = "Any";
 
 function DashboardController($scope, $location, $routeParams, StateStorage, reportAdapter) {
-    var displayMap = StateStorage.get(displayMapCookieKey) || {};
-
     $scope.testCaseFilter = function(testCase) {
-        return $scope.shouldDisplayResult(testCase.result);
+        return $scope.isResultTypeActive(testCase.result) || $scope.isResultTypeAny();
     }
 
-    $scope.shouldDisplayResult = function(resultType) {
-        if (!displayMap.hasOwnProperty(resultType)) {
-            displayMap[resultType] = true;
-        }
-
-        return displayMap[resultType];
+    $scope.isResultTypeActive = function(resultType) {
+        return $scope.getActiveResultType() === resultType;
     };
 
-    $scope.toggleDisplayResult = function(resultType) {
-        displayMap[resultType] = !$scope.shouldDisplayResult(resultType);
-        StateStorage.put(displayMapCookieKey, displayMap);
+    $scope.isResultTypeAny = function(){
+        return $scope.isResultTypeActive(RESULT_TYPE_ANY);
+    };
+
+    $scope.setAnyResultType = function(){
+        $scope.setActiveResultType(RESULT_TYPE_ANY);
+    };
+
+    $scope.setActiveResultType = function(resultType) {
+        StateStorage.put('ActiveResultType', resultType || RESULT_TYPE_ANY);
+    };
+
+    $scope.getActiveResultType = function(){
+        return StateStorage.get('ActiveResultType') || RESULT_TYPE_ANY;
     };
 
     $scope.openTestCase = function(testCase) {

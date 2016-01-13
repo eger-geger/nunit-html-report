@@ -3,7 +3,7 @@ var angular = require('angular');
 var application = angular.module('NUnitReport', [
     require('angular-route'),
     require('angular-animate'),
-    'ui.bootstrap',
+    require('angular-ui-bootstrap'),
     'angular.backtop'
 ]);
 
@@ -26,5 +26,4 @@ application.config(['$routeProvider',
     }
 ]);
 
-require('angular-ui-bootstrap/ui-bootstrap-tpls.min.js');
 require('angular-backtop');
