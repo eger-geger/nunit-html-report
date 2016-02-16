@@ -8,13 +8,13 @@ namespace NUnitReporter.ReportWriters
 {
     public class JsonReportWriter : AbstractReportWriter
     {
-        private const String TestResultJson = "TestResult.json";
-
-        protected override void Write(XmlDocument document, String outputFolderPath)
+        public JsonReportWriter(string outputFilePath) : base(outputFilePath)
         {
-            File.WriteAllText(
-                Path.Combine(outputFolderPath, TestResultJson),
-                JsonConvert.SerializeXmlNode(document, Formatting.Indented));
+        }
+
+        protected override void Write(XmlDocument document)
+        {
+            File.WriteAllText(OutputFilePath, JsonConvert.SerializeXmlNode(document, Formatting.Indented));
         }
     }
 }

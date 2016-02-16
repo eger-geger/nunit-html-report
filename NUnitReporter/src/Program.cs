@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using CommandLine;
 using NUnitReporter.Attachments;
 using NUnitReporter.NUnitReports;
@@ -31,23 +32,42 @@ namespace NUnitReporter
                         options.OutputFolderPath));
                 }
 
-                foreach (AbstractReportWriter writer in new List<AbstractReportWriter>
+                foreach (AbstractReportWriter writer in GetSelectedWriters(options))
                 {
-                    options.WriteJson ? new JsonReportWriter() : null,
-                    options.WriteXml ? new XmlReportWriter() : null,
-                    options.WriteHtml ? new HtmlReportWriter() : null
-                })
-                {
-                    if (writer != null)
+                    try
                     {
-                        writer.Write(nunitReport, options.OutputFolderPath);
+                        writer.Write(nunitReport);
+                        Console.WriteLine("Report was written to {0}", writer.OutputFilePath);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Error.WriteLine("Failed to write report to {0}", writer.OutputFilePath);
+                        Console.Error.WriteLine(ex.ToString());
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.Error.WriteLine(ex.Message);
                 Console.WriteLine(options.GetUsage());
+            }
+        }
+
+        private static IEnumerable<AbstractReportWriter> GetSelectedWriters(CommandLineOptions options)
+        {
+            if (options.WriteJson)
+            {
+                yield return new JsonReportWriter(Path.Combine(options.OutputFolderPath, "TestResult.json"));
+            }
+
+            if (options.WriteHtml)
+            {
+                yield return new HtmlReportWriter(Path.Combine(options.OutputFolderPath, "TestResult.html"));
+            }
+
+            if (options.WriteXml)
+            {
+                yield return new XmlReportWriter(Path.Combine(options.OutputFolderPath, "TestResult.xml"));
             }
         }
     }

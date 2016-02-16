@@ -62,7 +62,7 @@ gulp.task('copy-test-resources', function(){
         .pipe(gulp.dest('./dist/test/bootstrap/dist/css/'));
 
     gulp.src('../test-output/*')
-        .pipe(gulp.dest('./dist/test-output'));
+        .pipe(gulp.dest('./dist/test/test-output'));
 });
 
 gulp.task('index-html', ['copy-resources'], function() {

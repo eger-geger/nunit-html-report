@@ -1,3 +1,7 @@
+function getXmlDataSection(xmlDataSectionOrString){
+    return xmlDataSectionOrString["#cdata-section"] || xmlDataSectionOrString;
+}
+
 function ReportAdapter(report) {
     this.report = new TestSuiteWrapper(report['test-run']);
 }
@@ -106,16 +110,26 @@ TestCaseWrapper.prototype.getCategories = function(){
 }
 
 TestCaseWrapper.prototype.getMessage = function(){
+    var message = [];
+
     if(this.reason && this.reason.message){
-        return this.reason.message;
+        message.push(getXmlDataSection(this.reason.message));
     }
 
     if(this.failure && this.failure.message){
-        return this.failure.message;
+        message.push(getXmlDataSection(this.failure.message));
     }
 
-    if(this.errorMessage && this['stack-trace']){
-        return this.errorMessage + "\n" + this['stack-trace'];
+    if(this['stack-trace']){
+        message.push(getXmlDataSection(this['stack-trace']));
+    }
+
+    return message.join("\n");
+};
+
+TestCaseWrapper.prototype.getOutput = function(){
+    if(this.output){
+        return getXmlDataSection(this.output);
     }
 };
 

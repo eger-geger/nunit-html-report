@@ -7,23 +7,38 @@ namespace NUnitReporter.ReportWriters
 {
     public abstract class AbstractReportWriter
     {
-        public void Write(INUnitTestResult testResult, String outputFolderPath)
+        private readonly String _outputFilePath;
+
+        private readonly String _outputFolderPath;
+
+        protected AbstractReportWriter(string outputFilePath)
+        {
+            _outputFilePath = Path.GetFullPath(outputFilePath);
+            _outputFolderPath = Path.GetDirectoryName(_outputFilePath);
+        }
+
+        public void Write(INUnitTestResult testResult)
         {
             if (testResult == null)
             {
                 throw new ArgumentNullException("testResult");
             }
 
-            if (String.IsNullOrEmpty(outputFolderPath))
-            {
-                throw new ArgumentNullException("outputFolderPath");
-            }
+            Directory.CreateDirectory(OutputFolderPath);
 
-            Directory.CreateDirectory(outputFolderPath);
-
-            Write(testResult.XmlDocument, outputFolderPath);
+            Write(testResult.XmlDocument);
         }
 
-        protected abstract void Write(XmlDocument document, String outputFolderPath);
+        public String OutputFilePath
+        {
+            get { return _outputFilePath; }
+        }
+
+        public String OutputFolderPath
+        {
+            get { return _outputFolderPath; }
+        }
+
+        protected abstract void Write(XmlDocument document);
     }
 }
