@@ -11,11 +11,13 @@ namespace NUnitReporter.ReportWriters
 {
     public class HtmlReportWriter : AbstractReportWriter
     {
-        private const String TestResultHtml = "TestResult.html";
-
         private const String TemplateResoucePath = "NUnitReporter.templates.default";
 
         private const String TemplateIndexFileName = "index.html";
+
+        public HtmlReportWriter(string outputFilePath) : base(outputFilePath)
+        {
+        }
 
         private static readonly IDictionary<string, string> TemplateResources = new Dictionary<string, string>
         {
@@ -56,13 +58,13 @@ namespace NUnitReporter.ReportWriters
             return String.Format("{0}.{1}", TemplateResoucePath, relativePath);
         }
 
-        protected override void Write(XmlDocument document, String outputFolderPath)
+        protected override void Write(XmlDocument document)
         {
-            CopyMainFileTo(outputFolderPath, JsonConvert.SerializeXmlNode(document, Formatting.Indented));
+            CopyMainFileTo(OutputFilePath, JsonConvert.SerializeXmlNode(document, Formatting.Indented));
 
             foreach (var pair in TemplateResources)
             {
-                CopyResourceTo(GetTemplateResourceName(pair.Key), Path.Combine(outputFolderPath, pair.Value));
+                CopyResourceTo(GetTemplateResourceName(pair.Key), Path.Combine(OutputFolderPath, pair.Value));
             }
         }
 
@@ -91,7 +93,7 @@ namespace NUnitReporter.ReportWriters
             }
         }
 
-        private static void CopyMainFileTo(String outputFolderPath, String testResultJson)
+        private static void CopyMainFileTo(String outputFilePath, String testResultJson)
         {
             using (Stream stream = Assembly.GetManifestResourceStream(GetTemplateResourceName(TemplateIndexFileName)))
             {
@@ -116,7 +118,7 @@ namespace NUnitReporter.ReportWriters
                 script.AppendChild(document.CreateTextNode(String.Format("var NUnitTestResult = {0};", testResultJson)));
                 body.PrependChild(script);
 
-                document.Save(Path.Combine(outputFolderPath, TestResultHtml));
+                document.Save(outputFilePath);
             }
         }
     }

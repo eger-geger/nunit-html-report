@@ -1,16 +1,16 @@
-﻿using System;
-using System.IO;
-using System.Xml;
+﻿using System.Xml;
 
 namespace NUnitReporter.ReportWriters
 {
     public class XmlReportWriter : AbstractReportWriter
     {
-        private const String TestResultXml = "TestResult.xml";
-
-        protected override void Write(XmlDocument document, String outputFolderPath)
+        public XmlReportWriter(string outputFilePath) : base(outputFilePath)
         {
-            document.Save(Path.Combine(outputFolderPath, TestResultXml));
+        }
+
+        protected override void Write(XmlDocument document)
+        {
+            document.Save(OutputFilePath);
         }
     }
 }
