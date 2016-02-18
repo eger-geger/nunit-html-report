@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using CommandLine;
 using NUnitReporter.Attachments;
+using NUnitReporter.EventReport;
 using NUnitReporter.NUnitReports;
 using NUnitReporter.ReportWriters;
 
@@ -27,9 +28,11 @@ namespace NUnitReporter
 
                 if (!String.IsNullOrEmpty(options.AttachmentFolderPath))
                 {
-                    nunitReport.Append(new ImageAttachmentProvider(
+                    nunitReport.AddAttachments(new ImageAttachmentProvider(
                         options.AttachmentFolderPath,
                         options.OutputFolderPath));
+
+                    nunitReport.AddEventLog(new DiskStorage(options.AttachmentFolderPath));
                 }
 
                 foreach (AbstractReportWriter writer in GetSelectedWriters(options))

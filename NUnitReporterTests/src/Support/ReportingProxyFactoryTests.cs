@@ -2,7 +2,6 @@
 using Moq;
 using NUnit.Framework;
 using NUnitReporter.EventReport;
-using NUnitReporter.Support;
 
 namespace NUnitReporterTests.Support
 {

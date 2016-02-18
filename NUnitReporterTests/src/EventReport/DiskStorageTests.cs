@@ -10,7 +10,7 @@ namespace NUnitReporterTests.EventReport
         private static readonly string WorkingDirectory = Path.Combine(TestContext.CurrentContext.TestDirectory,
             "disk_storage_tests");
 
-        private readonly IEventReport _report = new NUnitReporter.EventReport.DefaultEventReport();
+        private readonly IEventReport _report = new DefaultEventReport();
 
         private readonly DiskStorage _storage = new DiskStorage(WorkingDirectory);
 

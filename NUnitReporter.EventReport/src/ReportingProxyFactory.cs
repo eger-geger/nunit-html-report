@@ -1,8 +1,7 @@
 ﻿using System;
 using Castle.DynamicProxy;
-using NUnitReporter.EventReport;
 
-namespace NUnitReporter.Support
+namespace NUnitReporter.EventReport
 {
     /// <summary>
     ///     Creates proxies which are recording events to <see cref="IEventReport"/>

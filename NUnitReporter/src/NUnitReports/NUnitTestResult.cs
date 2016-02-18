@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml;
+using Newtonsoft.Json;
 using NUnitReporter.Attachments;
+using NUnitReporter.EventReport;
 
 namespace NUnitReporter.NUnitReports
 {
@@ -13,12 +16,10 @@ namespace NUnitReporter.NUnitReports
 
         private readonly XmlDocument _testResultXml;
 
-        public NUnitTestResult(String testResultXml)
-        {
-            Validate.FilePath(testResultXml, "testResultXml is null or empty");
+        private readonly JsonSerializer _jsonSerializer;
 
-            _testResultXml = new XmlDocument();
-            _testResultXml.Load(testResultXml);
+        public NUnitTestResult(String testResultXml) : this(ValidateAndLoadTestResultXml(testResultXml))
+        {
         }
 
         public NUnitTestResult(XmlDocument testResultXml)
@@ -29,9 +30,15 @@ namespace NUnitReporter.NUnitReports
             }
 
             _testResultXml = testResultXml;
+
+            _jsonSerializer = JsonSerializer.CreateDefault(new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Objects,
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
+            });
         }
 
-        public void Append(IAttachmentProvider attachmentProvider)
+        public void AddAttachments(IAttachmentProvider attachmentProvider)
         {
             if (attachmentProvider == null)
             {
@@ -45,20 +52,8 @@ namespace NUnitReporter.NUnitReports
 
             foreach (XmlNode testCaseNode in _testResultXml.GetElementsByTagName(TestCaseElementName))
             {
-                if (testCaseNode.Attributes == null)
-                {
-                    throw new InvalidOperationException("TestCase XML node does not have attributes");
-                }
-
-                XmlAttribute idAttribute = testCaseNode.Attributes[TestCaseIdAttribute];
-
-                if (idAttribute == null)
-                {
-                    throw new InvalidOperationException("TestCase does not have ID attribute");
-                }
-
-                List<string> attachments = attachmentProvider
-                    .GetTestCaseAttachments(idAttribute.Value)
+                List<String> attachments = attachmentProvider
+                    .GetTestCaseAttachments(GetTestCaseId(testCaseNode))
                     .ToList();
 
                 if (!attachments.Any())
@@ -83,9 +78,66 @@ namespace NUnitReporter.NUnitReports
             }
         }
 
+        public void AddEventLog(IEventStorage eventStorage)
+        {
+            if (eventStorage == null)
+            {
+                throw new ArgumentNullException("eventStorage");
+            }
+
+            foreach (XmlNode testCaseNode in _testResultXml.GetElementsByTagName(TestCaseElementName))
+            {
+                var testCaseId = GetTestCaseId(testCaseNode);
+
+                if (!eventStorage.Exist(testCaseId))
+                {
+                    continue;
+                }
+
+                XmlElement eventLogElement = _testResultXml.CreateElement("events");
+
+                using (var stringWriter = new StringWriter())
+                {
+                    _jsonSerializer.Serialize(stringWriter, eventStorage.Get(testCaseId));
+
+                    eventLogElement.AppendChild(
+                        _testResultXml.CreateCDataSection(stringWriter.ToString())
+                    );
+                }
+            }
+        }
+
         public XmlDocument XmlDocument
         {
             get { return _testResultXml.CloneNode(true) as XmlDocument; }
+        }
+
+        private static String GetTestCaseId(XmlNode testCaseNode)
+        {
+            if (testCaseNode.Attributes == null)
+            {
+                throw new InvalidOperationException("TestCase XML node does not have attributes");
+            }
+
+            XmlAttribute idAttribute = testCaseNode.Attributes[TestCaseIdAttribute];
+
+            if (idAttribute == null)
+            {
+                throw new InvalidOperationException("TestCase does not have ID attribute");
+            }
+
+            return idAttribute.Value;
+        }
+
+        private static XmlDocument ValidateAndLoadTestResultXml(String testResultXml)
+        {
+            Validate.FilePath(testResultXml, "testResultXml is null or empty");
+
+            var document = new XmlDocument();
+
+            document.Load(testResultXml);
+
+            return document;
         }
     }
 }
