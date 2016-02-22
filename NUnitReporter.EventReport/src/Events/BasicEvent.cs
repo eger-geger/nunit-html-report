@@ -7,9 +7,11 @@ namespace NUnitReporter.EventReport.Events
     [JsonObject(MemberSerialization.OptIn)]
     public class BasicEvent : AbstractActivity
     {
-        [JsonProperty] private readonly IList<object> _arguments;
+        [JsonProperty("arguments")]
+        private readonly IList<object> _arguments;
 
-        [JsonProperty] private readonly string _description;
+        [JsonProperty("description")]
+        private readonly string _description;
 
         [JsonConstructor]
         protected BasicEvent()

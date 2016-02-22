@@ -76,6 +76,15 @@
         <pre class="truncated">{{currentTestCase.getOutput()}}</pre>
         <hr/>
     </div>
+    <div ng-show="!!currentTestCase.eventLog">
+        <h4>Event Log</h4>
+        <treecontrol class="tree-light" tree-model="currentTestCase.getEventLog()" options="eventTreeOptions">
+           <span class="description">{{node.description}}</span>
+           <span ng-if="node.arguments && node.arguments.length > 0" class="arguments">{{node.arguments}}</span>
+           <span ng-if="node.duration" class="duration pull-right">{{node.duration}}</span>
+        </treecontrol>
+        <hr/>
+    </div>
     <div ng-show="!!currentTestCase.images">
         <h4>Screenshots</h4>
         <uib-carousel interval="5000" class=".carousel">

@@ -7,7 +7,7 @@ namespace NUnitReporter.EventReport
 {
     public class DefaultEventReport : IEventReport
     {
-        [JsonProperty]
+        [JsonProperty("root")]
         private readonly IActivity _rootActivity;
 
         private IActivity _currentActivity;
@@ -91,11 +91,13 @@ namespace NUnitReporter.EventReport
 
             while (examinedActivity != null && examinedActivity.Guid != actionGuid)
             {
+                examinedActivity.FinalizeActivity();
                 examinedActivity = examinedActivity.Parent;
             }
 
             if (examinedActivity != null)
             {
+                examinedActivity.FinalizeActivity();
                 _currentActivity = examinedActivity.Parent;
             }
 

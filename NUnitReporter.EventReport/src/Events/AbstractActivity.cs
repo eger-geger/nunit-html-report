@@ -11,6 +11,9 @@ namespace NUnitReporter.EventReport.Events
         [JsonProperty]
         private readonly Guid _guid;
 
+        [JsonProperty("startDateTime")]
+        protected readonly DateTime StartDateTime;
+
         private readonly IActivity _parent;
 
         protected AbstractActivity()
@@ -22,6 +25,7 @@ namespace NUnitReporter.EventReport.Events
         {
             _parent = parent;
             _guid = Guid.NewGuid();
+            StartDateTime = DateTime.UtcNow;
         }
 
         public Guid Guid
@@ -32,6 +36,10 @@ namespace NUnitReporter.EventReport.Events
         public virtual IActivity Parent
         {
             get { return _parent; }
+        }
+
+        public virtual void FinalizeActivity()
+        {
         }
 
         public virtual IEnumerable<IActivity> Nested

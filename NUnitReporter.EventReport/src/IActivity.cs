@@ -12,5 +12,7 @@ namespace NUnitReporter.EventReport
         IEnumerable<IActivity> Nested { get; }
 
         void AddNested(IActivity activity);
+
+        void FinalizeActivity();
     }
 }

@@ -31,6 +31,7 @@ gulp.task('index-html-test', ['copy-test-resources'], function() {
 
     var cssStream = gulp.src([
         './node_modules/angular-backtop/dist/angular-backtop.css',
+        './node_modules/angular-tree-control/css/tree-control.css',
         './css/*'
     ]);
 
@@ -72,6 +73,7 @@ gulp.task('index-html', ['copy-resources'], function() {
 
     var cssStream = gulp.src([
         './node_modules/angular-backtop/dist/angular-backtop.css',
+        './node_modules/angular-tree-control/css/tree-control.css',
         './css/*'
     ]);
 

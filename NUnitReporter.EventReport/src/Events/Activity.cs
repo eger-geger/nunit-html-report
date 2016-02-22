@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
@@ -7,8 +8,14 @@ namespace NUnitReporter.EventReport.Events
     [JsonObject(MemberSerialization.OptIn)]
     public class Activity : BasicEvent
     {
-        [JsonProperty]
+        [JsonProperty("children")]
         private readonly IList<IActivity> _nested;
+
+        [JsonProperty("endDateTime")]
+        private DateTime _endDateTime;
+
+        [JsonProperty("duration")]
+        private TimeSpan _duration;
 
         [JsonConstructor]
         protected Activity() : base()
@@ -32,6 +39,12 @@ namespace NUnitReporter.EventReport.Events
         public override void AddNested(IActivity activity)
         {
             _nested.Add(activity);
+        }
+
+        public override void FinalizeActivity()
+        {
+            _endDateTime = DateTime.UtcNow;
+            _duration = _endDateTime.Subtract(StartDateTime);
         }
 
         protected bool Equals(Activity other)

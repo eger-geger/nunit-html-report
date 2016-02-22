@@ -36,6 +36,17 @@ function DashboardController($scope, $location, $routeParams, StateStorage, repo
     $scope.testCases = reportAdapter.testCases();
     $scope.summary = reportAdapter.summary();
 
+    $scope.eventTreeOptions = {
+        nodeChildren: 'children',
+        dirSelectable: false,
+        injectClasses: {
+            ul: 'list-group',
+            li: 'list-group-item',
+            iCollapsed: 'glyphicon glyphicon-plus',
+            iExpanded: 'glyphicon glyphicon-minus',
+        }
+    };
+
     $scope.currentTestCase = $routeParams.id 
         ? reportAdapter.findTestCaseById($routeParams.id)
         : $scope.testCases[0];

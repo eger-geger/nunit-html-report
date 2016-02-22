@@ -6,9 +6,11 @@ namespace NUnitReporter.EventReport.Events
     [JsonObject(MemberSerialization.OptIn)]
     public class ErrorEvent : AbstractActivity
     {
-        [JsonProperty] private readonly string _message;
+        [JsonProperty("message")]
+        private readonly string _message;
 
-        [JsonProperty] private readonly string _stackTrace;
+        [JsonProperty("stacktrace")]
+        private readonly string _stackTrace;
 
         [JsonConstructor]
         protected ErrorEvent()

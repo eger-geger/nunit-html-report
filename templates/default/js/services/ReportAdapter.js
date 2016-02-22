@@ -133,6 +133,18 @@ TestCaseWrapper.prototype.getOutput = function(){
     }
 };
 
+TestCaseWrapper.prototype.getEventLog = function(){
+    if(!this.events){
+        return;
+    }
+
+    if(!this.eventLog){
+        this.eventLog = JSON.parse(getXmlDataSection(this.events));
+    }
+
+    return this.eventLog.root;
+}
+
 function getTestCategories(){
     var categories = [];
 

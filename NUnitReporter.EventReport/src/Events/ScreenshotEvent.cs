@@ -5,7 +5,7 @@ namespace NUnitReporter.EventReport.Events
     [JsonObject(MemberSerialization.OptIn)]
     internal class ScreenshotEvent : AbstractActivity
     {
-        [JsonProperty]
+        [JsonProperty("filePath")]
         private readonly string _filePath;
 
         [JsonConstructor]

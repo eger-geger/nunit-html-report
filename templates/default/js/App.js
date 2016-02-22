@@ -4,6 +4,7 @@ var application = angular.module('NUnitReport', [
     require('angular-route'),
     require('angular-animate'),
     require('angular-ui-bootstrap'),
+    require('angular-tree-control'),
     'angular.backtop'
 ]);
 

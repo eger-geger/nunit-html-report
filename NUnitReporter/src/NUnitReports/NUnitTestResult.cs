@@ -104,6 +104,8 @@ namespace NUnitReporter.NUnitReports
                         _testResultXml.CreateCDataSection(stringWriter.ToString())
                     );
                 }
+
+                testCaseNode.AppendChild(eventLogElement);
             }
         }
 
