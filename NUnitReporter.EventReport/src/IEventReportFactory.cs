@@ -1,7 +1,7 @@
 ﻿namespace NUnitReporter.EventReport
 {
     /// <summary>
-    /// Cretes instances of <see cref="IEventReport"/>
+    /// Creates instances of <see cref="IEventReport"/>
     /// </summary>
     public interface IEventReportFactory
     {

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Nure.EventReport</id>
+    <version>1.0.0-alpha</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/eger-geger/nunit-html-report/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/eger-geger/nunit-html-report</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>NUnit</tags>
+  </metadata>
+</package>
