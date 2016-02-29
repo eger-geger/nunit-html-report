@@ -2,6 +2,7 @@
 using Moq;
 using NUnit.Framework;
 using NUnitReporter.EventReport;
+using NUnitReporter.EventReport.ProxyFactory;
 
 namespace NUnitReporterTests.Support
 {

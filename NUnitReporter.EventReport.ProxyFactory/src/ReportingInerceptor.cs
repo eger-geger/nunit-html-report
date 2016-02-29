@@ -1,7 +1,7 @@
 ﻿using System;
 using Castle.DynamicProxy;
 
-namespace NUnitReporter.EventReport
+namespace NUnitReporter.EventReport.ProxyFactory
 {
     public class ReportingInerceptor : IInterceptor
     {
