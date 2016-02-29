@@ -52,29 +52,11 @@ namespace NUnitReporterTests.Support
         }
 
         [Test]
-        public void ShouldCreateReportingProxyFromInterfaceAndImplementation()
+        public void ShouldCreateReportingProxyFromClassAndImplemenation()
         {
             var phoneMock = new Mock<IPhone>();
 
-            var phoneProxy = _proxyFactory.CreateInterfaceProxy(phoneMock.Object);
-
-            phoneProxy.Call("123456");
-            phoneProxy.Call("098765");
-            phoneProxy.Charge();
-
-            phoneMock.Verify(p => p.Call("123456"));
-            phoneMock.Verify(p => p.Call("098765"));
-            phoneMock.Verify(p => p.Charge());
-
-            _eventReportMock.Verify();
-        }
-
-        [Test]
-        public void ShouldCreateReportingProxyFromClassAndImplemenation()
-        {
-            var phoneMock = new Mock<Phone>();
-
-            var phoneProxy = _proxyFactory.CreateClassProxy(phoneMock.Object);
+            var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
 
             phoneProxy.Call("123456");
             phoneProxy.Call("098765");
@@ -96,9 +78,9 @@ namespace NUnitReporterTests.Support
 
             phoneMock.Setup(p => p.Call("123456")).Throws(exception);
 
-            var phoneProxy = _proxyFactory.CreateInterfaceProxy(phoneMock.Object);
+            var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
 
-            Assert.That(()=> phoneProxy.Call("123456"), Throws.Exception);
+            Assert.That(() => phoneProxy.Call("123456"), Throws.Exception);
             phoneProxy.Call("098765");
             phoneProxy.Charge();
 
@@ -110,6 +92,20 @@ namespace NUnitReporterTests.Support
 
             _eventReportMock.Verify(r => r.RecordError(exception));
         }
+
+        [Test]
+        public void ProxyShouldIgnoreBaseOperations()
+        {
+            var phoneMock = new Mock<IPhone>();
+
+            var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
+
+            phoneProxy.ToString();
+            phoneProxy.GetHashCode();
+
+            _eventReportMock.Verify(r => r.RecordActivityStarted("ToString"), Times.Never);
+            _eventReportMock.Verify(r => r.RecordActivityStarted("GetHashCode"), Times.Never);
+        }
     }
 
     public interface IPhone
@@ -120,12 +116,22 @@ namespace NUnitReporterTests.Support
 
     public class Phone : IPhone
     {
+        private readonly IPhone _wrappedPhone;
+
+        public Phone(IPhone wrappedPhone)
+        {
+            _wrappedPhone = wrappedPhone;
+        }
+
         public virtual void Call(string phone)
         {
+            _wrappedPhone.Call(phone);
         }
 
         public virtual void Charge()
         {
+            _wrappedPhone.Charge();
         }
+
     }
 }

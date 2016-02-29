@@ -16,13 +16,13 @@ namespace NUnitReporter.EventReport.ProxyFactory
         {
             var report = _reportFactory.CurrentTestReport;
 
-            if (report == null)
+            if (report != null && IsAligibleForReporting(invocation))
             {
-                invocation.Proceed();
+                ProceedAndReport(invocation, report);
             }
             else
             {
-                ProceedAndReport(invocation, report);
+                invocation.Proceed();
             }
         }
 
@@ -46,6 +46,21 @@ namespace NUnitReporter.EventReport.ProxyFactory
                     report.RecordActivityFinished(actionGuid);
                 }
             }
+        }
+
+        private static Boolean IsAligibleForReporting(IInvocation invocation)
+        {
+            if (invocation.Method.IsSpecialName)
+            {
+                return false;
+            }
+
+            if (invocation.Method.GetBaseDefinition().DeclaringType == typeof (Object))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

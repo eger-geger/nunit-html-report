@@ -31,44 +31,22 @@ namespace NUnitReporter.EventReport.ProxyFactory
         ///     Creates new proxy instance using provided class and class instance
         /// </summary>
         /// <typeparam name="TTarget">Class of the proxy instance</typeparam>
-        /// <param name="target">Object to proxy</param>
+        /// <param name="constructorArguments">Constructor arguments used by target class constructor</param>
         /// <returns>Proxy instance which records every method call to event report</returns>
-        public TTarget CreateClassProxy<TTarget>(TTarget target) where TTarget : class
+        public TTarget Create<TTarget>(params Object[] constructorArguments) where TTarget : class
         {
-            return _generator.CreateClassProxyWithTarget(target, new ReportingInerceptor(_reportFactory));
+            return (TTarget) Create(typeof(TTarget), constructorArguments);
         }
 
         /// <summary>
         ///     Creates new proxy instance using provided class and class instance
         /// </summary>
-        /// <param name="class">Class of the proxy instance</param>
-        /// <param name="target">Object to proxy</param>
+        /// <param name="classToProxy">Class of the proxy instance</param>
+        /// <param name="constructorArguments">Constructor arguments used by target class constructor</param>
         /// <returns>Proxy instance which records every method call to event report</returns>
-        public object CreateClassProxy(Type @class, object target)
+        public object Create(Type classToProxy, params Object[] constructorArguments)
         {
-            return _generator.CreateClassProxyWithTarget(@class, target, new ReportingInerceptor(_reportFactory));
-        }
-
-        /// <summary>
-        ///     Creates new proxy instance using provided interface and implementation
-        /// </summary>
-        /// <typeparam name="TTarget">Interface which proxy instance will implement</typeparam>
-        /// <param name="target">Object to proxy</param>
-        /// <returns>Proxy instance which records every method call to event report</returns>
-        public TTarget CreateInterfaceProxy<TTarget>(TTarget target) where TTarget : class
-        {
-            return _generator.CreateInterfaceProxyWithTarget(target, new ReportingInerceptor(_reportFactory));
-        }
-
-        /// <summary>
-        ///     Creates new proxy instance using provided interface and implementation
-        /// </summary>
-        /// <param name="interface">Interface which proxy instance will implement</param>
-        /// <param name="target">Object to proxy</param>
-        /// <returns>Proxy instance which records every method call to event report</returns>
-        public object CreateInterfaceProxy(Type @interface, object target)
-        {
-            return _generator.CreateInterfaceProxyWithTarget(@interface, target, new ReportingInerceptor(_reportFactory));
+            return _generator.CreateClassProxy(classToProxy, constructorArguments, new ReportingInerceptor(_reportFactory));
         }
     }
 }
