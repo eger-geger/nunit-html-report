@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
@@ -8,7 +10,7 @@ namespace NUnitReporter.EventReport.Events
     public class BasicEvent : AbstractActivity
     {
         [JsonProperty("arguments")]
-        private readonly IList<object> _arguments;
+        private readonly IList<String> _arguments;
 
         [JsonProperty("description")]
         private readonly string _description;
@@ -16,13 +18,13 @@ namespace NUnitReporter.EventReport.Events
         [JsonConstructor]
         protected BasicEvent()
         {
-            _arguments = new List<object>();
+            _arguments = new List<String>();
         }
 
-        public BasicEvent(IActivity parent, string description, IEnumerable<object> arguments) : base(parent)
+        public BasicEvent(IActivity parent, string description, IEnumerable<Object> arguments) : base(parent)
         {
             _description = description;
-            _arguments = arguments.ToList();
+            _arguments = arguments.Select(ConvertArgumentToString).ToList();
         }
 
         public string Description
@@ -30,7 +32,7 @@ namespace NUnitReporter.EventReport.Events
             get { return _description; }
         }
 
-        public IList<object> Arguments
+        public IList<String> Arguments
         {
             get { return _arguments; }
         }
@@ -59,6 +61,21 @@ namespace NUnitReporter.EventReport.Events
                 hashCode = (hashCode*397) ^ (_description != null ? _description.GetHashCode() : 0);
                 return hashCode;
             }
+        }
+
+        private static String ConvertArgumentToString(Object argument)
+        {
+            if (argument is String)
+            {
+                return (String) argument;
+            }
+
+            if (argument is IEnumerable)
+            {
+                return String.Format("< {0} >", String.Join(", ", (argument as IEnumerable).Cast<Object>().ToArray())) ;
+            }
+
+            return argument.ToString();
         }
 
         public override string ToString()

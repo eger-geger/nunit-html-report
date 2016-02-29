@@ -14,8 +14,8 @@ namespace NUnitReporter.EventReport.Events
         [JsonProperty("endDateTime")]
         private DateTime _endDateTime;
 
-        [JsonProperty("duration")]
-        private TimeSpan _duration;
+        [JsonProperty("durationInSeconds")]
+        private Int32 _durationInSeconds;
 
         [JsonConstructor]
         protected Activity() : base()
@@ -44,7 +44,7 @@ namespace NUnitReporter.EventReport.Events
         public override void FinalizeActivity()
         {
             _endDateTime = DateTime.UtcNow;
-            _duration = _endDateTime.Subtract(StartDateTime);
+            _durationInSeconds = Convert.ToInt32(_endDateTime.Subtract(StartDateTime).TotalSeconds);
         }
 
         protected bool Equals(Activity other)

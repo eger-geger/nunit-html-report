@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using NUnitReporter.EventReport;
 using NUnitReporter.EventReport.Events;
 
@@ -8,6 +10,17 @@ namespace NUnitReporterTests.EventReport
 {
     public class DefaultEventReportTests
     {
+        public static IEnumerable<ITestCaseData> ArgumentsTestCases
+        {
+            get
+            {
+                yield return new TestCaseData(new Object[] { "abcde" } , new String[] { "abcde" });
+                yield return new TestCaseData(new Object[] {1, 2, 3}, new String[] {"1", "2", "3"});
+                yield return new TestCaseData(new Object[] {new Object[] {"1", "2"}}, new String[] {"< 1, 2 >"});
+                yield return new TestCaseData(new Object[] { new List<Object> { "1", "2" } }, new String[] { "< 1, 2 >" });
+            }
+        }
+
         [Test]
         public void ShouldCreateNestedEvents()
         {
@@ -80,6 +93,33 @@ namespace NUnitReporterTests.EventReport
                 Is.InstanceOf<ErrorEvent>()
                     .And.Property("Message").EqualTo(exception.Message)
                     .And.Property("StackTrace").EqualTo(exception.StackTrace)
+            ));
+        }
+
+        [TestCaseSource("ArgumentsTestCases")]
+        public void ShouldConvertEventArgumensToString(Object[] arguments, String[] argumentsAsStrings)
+        {
+            var report = new DefaultEventReport();
+
+            report.RecordEvent("PushingTheBall", arguments);
+
+            Assert.That(report.RootActivity.Nested, Has.Count.EqualTo(1).And.Some.Matches(
+                Is.InstanceOf<BasicEvent>()
+                    .And.Property("Arguments").EquivalentTo(argumentsAsStrings)
+            ));
+        }
+
+        [TestCaseSource("ArgumentsTestCases")]
+        public void ShouldConvertActivityArgumensToString(Object[] arguments, String[] argumentsAsStrings)
+        {
+            var report = new DefaultEventReport();
+
+            var guid = report.RecordActivityStarted("SmashingTheCar", arguments);
+            report.RecordActivityFinished(guid);
+
+            Assert.That(report.RootActivity.Nested, Has.Count.EqualTo(1).And.Some.Matches(
+                Is.InstanceOf<BasicEvent>()
+                    .And.Property("Arguments").EquivalentTo(argumentsAsStrings)
             ));
         }
     }
