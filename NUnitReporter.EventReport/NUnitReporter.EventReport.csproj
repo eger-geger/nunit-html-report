@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\EventReport.cs" />
+    <Compile Include="src\DefaultEventReport.cs" />
     <Compile Include="src\DiskStorage.cs" />
     <Compile Include="src\Events\AbstractActivity.cs" />
     <Compile Include="src\Events\Activity.cs" />

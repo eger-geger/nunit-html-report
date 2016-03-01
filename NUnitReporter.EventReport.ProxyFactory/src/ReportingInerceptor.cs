@@ -28,10 +28,7 @@ namespace NUnitReporter.EventReport.ProxyFactory
 
         private static void ReportAndProceed(IInvocation invocation, IEventReport report)
         {
-            String actionGuid = report.RecordActivityStarted(
-                String.Format("{0}::{1}", invocation.TargetType.Name, invocation.Method.Name), 
-                invocation.Arguments
-            );
+            String actionGuid = report.RecordActivityStarted(FormatInvocationName(invocation), invocation.Arguments);
 
             try
             {
@@ -51,11 +48,26 @@ namespace NUnitReporter.EventReport.ProxyFactory
             }
         }
 
+        private static String FormatInvocationName(IInvocation invocation)
+        {
+            if (IsPropertySetter(invocation))
+            {
+                return String.Format("{0}::{1}", invocation.TargetType.Name, invocation.Method.Name.Replace("set_", "Set"));
+            }
+
+            if (IsPropertyGetter(invocation))
+            {
+                return String.Format("{0}::{1}", invocation.TargetType.Name, invocation.Method.Name.Replace("get_", "Get"));
+            }
+
+            return String.Format("{0}::{1}", invocation.TargetType.Name, invocation.Method.Name);
+        }
+
         private static Boolean IsAligibleForReporting(IInvocation invocation)
         {
             if (invocation.Method.IsSpecialName)
             {
-                return false;
+                return IsPropertySetter(invocation);
             }
 
             if (invocation.Method.GetBaseDefinition().DeclaringType == typeof (Object))
@@ -64,6 +76,26 @@ namespace NUnitReporter.EventReport.ProxyFactory
             }
 
             return true;
+        }
+
+        private static Boolean IsPropertyGetter(IInvocation invocation)
+        {
+            if (!invocation.Method.IsSpecialName)
+            {
+                return false;
+            }
+
+            return invocation.Method.Name.StartsWith("get_");
+        }
+
+        private static Boolean IsPropertySetter(IInvocation invocation)
+        {
+            if (!invocation.Method.IsSpecialName)
+            {
+                return false;
+            }
+
+            return invocation.Method.Name.StartsWith("set_");
         }
     }
 }

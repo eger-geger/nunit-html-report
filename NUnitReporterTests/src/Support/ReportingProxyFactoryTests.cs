@@ -22,7 +22,11 @@ namespace NUnitReporterTests.Support
             _reportFactoryMock
                 .Setup(f => f.CurrentTestReport)
                 .Returns(_eventReportMock.Object);
+        }
 
+        [Test]
+        public void ProxyShouldTrackVirtualMethodUsage()
+        {
             _eventReportMock
                 .Setup(r => r.RecordActivityStarted("Phone::Call", "123456"))
                 .Returns("abcdefg")
@@ -49,11 +53,7 @@ namespace NUnitReporterTests.Support
             _eventReportMock
                 .Setup(r => r.RecordActivityFinished("abcdefg"))
                 .Verifiable();
-        }
 
-        [Test]
-        public void ShouldCreateReportingProxyFromClassAndImplemenation()
-        {
             var phoneMock = new Mock<IPhone>();
 
             var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
@@ -81,16 +81,47 @@ namespace NUnitReporterTests.Support
             var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
 
             Assert.That(() => phoneProxy.Call("123456"), Throws.Exception);
-            phoneProxy.Call("098765");
-            phoneProxy.Charge();
-
-            phoneMock.Verify(p => p.Call("123456"));
-            phoneMock.Verify(p => p.Call("098765"));
-            phoneMock.Verify(p => p.Charge());
-
-            _eventReportMock.Verify();
 
             _eventReportMock.Verify(r => r.RecordError(exception));
+        }
+
+        [Test]
+        public void ProxyShouldRecordPropertyUsage()
+        {
+            _eventReportMock
+                .Setup(r => r.RecordActivityStarted("Phone::SetOwner", "Bill Gates"))
+                .Returns("kkjjll")
+                .Verifiable();
+
+            _eventReportMock
+                .Setup(r => r.RecordActivityFinished("kkjjll"))
+                .Verifiable();
+
+
+            var phoneMock = new Mock<IPhone>();
+            phoneMock.SetupProperty(p => p.Owner);
+
+            var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
+            phoneProxy.Owner = "Bill Gates";
+            
+            Assert.That(phoneProxy.Owner, Is.EqualTo("Bill Gates"));
+            Assert.That(phoneMock.Object.Owner, Is.EqualTo("Bill Gates"));
+
+            _eventReportMock.Verify();
+        }
+
+        [Test]
+        public void ProxyShouldIgnoreNonVirtualProperties()
+        {
+            var phoneMock = new Mock<IPhone>();
+
+            var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
+
+            phoneProxy.DeviceId = "12345";
+
+            Assert.That(phoneProxy.DeviceId, Is.EqualTo("12345"));
+
+            _eventReportMock.Verify(r => r.RecordActivityStarted("Phone::SetDeviceId", "12345"), Times.Never);
         }
 
         [Test]
@@ -112,11 +143,21 @@ namespace NUnitReporterTests.Support
     {
         void Call(string phone);
         void Charge();
+
+        String Owner { get; set; }
     }
 
     public class Phone : IPhone
     {
         private readonly IPhone _wrappedPhone;
+
+        public virtual string Owner
+        {
+            get { return _wrappedPhone.Owner; }
+            set { _wrappedPhone.Owner = value; }
+        }
+
+        public String DeviceId { get; set; }
 
         public Phone(IPhone wrappedPhone)
         {

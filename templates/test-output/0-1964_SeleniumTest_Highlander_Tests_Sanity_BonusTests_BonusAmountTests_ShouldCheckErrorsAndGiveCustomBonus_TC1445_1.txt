@@ -1,2 +1,0 @@
-#0: http://my.stg.justanswer.local/dashboard
-#1: http://professional.stg.justanswer.local/
