@@ -8,7 +8,7 @@ namespace NUnitReporter.EventReport.Events
     [JsonObject(MemberSerialization.OptIn)]
     public class RootActivity : IActivity
     {
-        [JsonProperty("nestedEvents")]
+        [JsonProperty("children")]
         private readonly IList<IActivity> _nested;
 
         [JsonProperty]
@@ -42,7 +42,6 @@ namespace NUnitReporter.EventReport.Events
 
         public void FinalizeActivity()
         {
-            throw new NotImplementedException();
         }
 
         protected bool Equals(RootActivity other)

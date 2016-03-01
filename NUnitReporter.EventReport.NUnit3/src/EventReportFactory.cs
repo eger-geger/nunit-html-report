@@ -48,7 +48,7 @@ namespace NUnitReporter.EventReport.NUnit3
 
                 if (!_reports.ContainsKey(currentTestId))
                 {
-                    _reports.Add(currentTestId, new DefaultEventReport());
+                    _reports.Add(currentTestId, new EventReport());
                 }
 
                 return _reports[currentTestId];

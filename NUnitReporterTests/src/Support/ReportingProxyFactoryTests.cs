@@ -24,17 +24,17 @@ namespace NUnitReporterTests.Support
                 .Returns(_eventReportMock.Object);
 
             _eventReportMock
-                .Setup(r => r.RecordActivityStarted("Call", "123456"))
+                .Setup(r => r.RecordActivityStarted("Phone::Call", "123456"))
                 .Returns("abcdefg")
                 .Verifiable();
 
             _eventReportMock
-                .Setup(r => r.RecordActivityStarted("Call", "098765"))
+                .Setup(r => r.RecordActivityStarted("Phone::Call", "098765"))
                 .Returns("hklmnop")
                 .Verifiable();
 
             _eventReportMock
-                .Setup(r => r.RecordActivityStarted("Charge"))
+                .Setup(r => r.RecordActivityStarted("Phone::Charge"))
                 .Returns("qprstxy")
                 .Verifiable();
 

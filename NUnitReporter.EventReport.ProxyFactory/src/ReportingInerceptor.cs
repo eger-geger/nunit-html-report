@@ -18,7 +18,7 @@ namespace NUnitReporter.EventReport.ProxyFactory
 
             if (report != null && IsAligibleForReporting(invocation))
             {
-                ProceedAndReport(invocation, report);
+                ReportAndProceed(invocation, report);
             }
             else
             {
@@ -26,9 +26,12 @@ namespace NUnitReporter.EventReport.ProxyFactory
             }
         }
 
-        private static void ProceedAndReport(IInvocation invocation, IEventReport report)
+        private static void ReportAndProceed(IInvocation invocation, IEventReport report)
         {
-            String actionGuid = report.RecordActivityStarted(invocation.Method.Name, invocation.Arguments);
+            String actionGuid = report.RecordActivityStarted(
+                String.Format("{0}::{1}", invocation.TargetType.Name, invocation.Method.Name), 
+                invocation.Arguments
+            );
 
             try
             {

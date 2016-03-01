@@ -116,12 +116,14 @@ TestCaseWrapper.prototype.getMessage = function(){
         message.push(getXmlDataSection(this.reason.message));
     }
 
-    if(this.failure && this.failure.message){
-        message.push(getXmlDataSection(this.failure.message));
-    }
+    if(this.failure){
+        if(this.failure.message){
+            message.push(getXmlDataSection(this.failure.message));    
+        }
 
-    if(this['stack-trace']){
-        message.push(getXmlDataSection(this['stack-trace']));
+        if(this.failure['stack-trace'] && this.label == 'Error'){
+            message.push(getXmlDataSection(this.failure['stack-trace']));
+        }    
     }
 
     return message.join("\n");

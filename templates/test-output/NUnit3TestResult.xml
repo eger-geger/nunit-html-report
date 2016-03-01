@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="829" result="Failed" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="3" engine-version="3.0.5813.39036" clr-version="4.0.30319.42000" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="319.129326">
+  <command-line><![CDATA[SeleniumTest\packages\NUnit.Console.3.0.1\tools\nunit3-console.exe  SeleniumTest\SeleniumTest\bin\Debug\SeleniumTest.dll --where "cat = Smoke" --workers 4 --work test-output --result:NUnit3TestResult.xml;format=nunit3]]></command-line>
+  <filter>
+    <cat>Smoke</cat>
+  </filter>
+  <test-suite type="Assembly" id="0-2157" name="SeleniumTest.dll" fullname="d:\git\ja-automation\SeleniumTest\SeleniumTest\bin\Debug\SeleniumTest.dll" runstate="Runnable" testcasecount="829" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.858982" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="3">
+    <environment framework-version="3.0.5813.39032" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="d:\git\ja-automation" machine-name="PC-134" user="ivan.mihaylovskyy" user-domain="JUSTANSWER" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="WorkDirectory" value="test-output" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="ParallelScope" value="Fixtures" />
+      <property name="_PID" value="13828" />
+      <property name="_APPDOMAIN" value="test-domain-" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="0-2158" name="SeleniumTest" fullname="SeleniumTest" runstate="Runnable" testcasecount="829" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.845448" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="3">
+      <properties />
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="0-2179" name="Highlander" fullname="SeleniumTest.Highlander" runstate="Runnable" testcasecount="206" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.844765" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="3">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="0-2180" name="Tests" fullname="SeleniumTest.Highlander.Tests" runstate="Runnable" testcasecount="206" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.844744" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="3">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="0-2192" name="Funnel" fullname="SeleniumTest.Highlander.Tests.Funnel" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:33:53Z" duration="75.899955" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="1">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="0-1969" name="GuestFunnelTests" fullname="SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests" classname="SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:33:53Z" duration="75.896821" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="1">
+              <properties>
+                <property name="Category" value="HLSanityInternationalFunnel" />
+              </properties>
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <output><![CDATA[Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: QXqjPNkPGU/pearl 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: QXqjPNkPGU/pearl 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: QUaBudMiKc/pearl 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: QUaBudMiKc/pearl 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking FixtureSetUp method... 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking FixtureSetUp method... 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking FixtureTearDown method... 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking FixtureTearDown method... 
+Worker#3: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#3: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+              <test-case id="0-1970" name="ShouldProceedWithFunnelFromHomePage" fullname="SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests.ShouldProceedWithFunnelFromHomePage" methodname="ShouldProceedWithFunnelFromHomePage" classname="SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests" runstate="Runnable" seed="206426854" result="Failed" start-time="2016-03-01 08:32:58Z" end-time="2016-03-01 08:33:53Z" duration="55.420895" asserts="1">
+                <properties>
+                  <property name="Category" value="Smoke" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Expected: WaitingRoomPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver] to be loaded after 10000 millisecond delay
+  But was:  <WaitingRoomPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]>
+]]></message>
+                  <stack-trace><![CDATA[at NUnit.Framework.AssertionHelper.Expect[TActual](TActual actual, IResolveConstraint expression)
+at SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests.ShouldProceedWithFunnelFromHomePage() in D:\git\ja-automation\SeleniumTest\SeleniumTest\Highlander\Tests\Funnel\GuestFunnelTests.cs:line 31
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking SetUp method... 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking SetUp method... 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: ICjnpsWxiJ/pearl 
+Worker#3: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: ICjnpsWxiJ/pearl 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ja--abu--question-box.homepage-qbox] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ja--abu--question-box.homepage-qbox] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: ul.sublist a, li.maintab span.tab] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: ul.sublist a, li.maintab span.tab] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #NewQuestion_Text, #QuestionText, #QuestionTextDD] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #NewQuestion_Text, #QuestionText, #QuestionTextDD] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input[type='submit'], .input-submit] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input[type='submit'], .input-submit] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [button text="Get an Answer"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [button text="Get an Answer"] 
+Worker#3: SeleniumTest.Highlander.Flows.CreditCardFunnel - working with [OptionalDetailsPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#3: SeleniumTest.Highlander.Flows.CreditCardFunnel - working with [OptionalDetailsPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue-button] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue-button] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue-button"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue-button"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderDetail] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderDetail] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderUrgency] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderUrgency] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#3: SeleniumTest.Highlander.Flows.CreditCardFunnel - working with [PricingPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#3: SeleniumTest.Highlander.Flows.CreditCardFunnel - working with [PricingPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submit] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submit] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #cssNamespace] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #cssNamespace] 
+Worker#3: SeleniumTest.Highlander.Flows.CreditCardFunnel - working with [PaymentPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#3: SeleniumTest.Highlander.Flows.CreditCardFunnel - working with [PaymentPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .tab-link.cc-tab] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .tab-link.cc-tab] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [dd text="Credit Card"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [dd text="Credit Card"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #CardNumber] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #CardNumber] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #Cvv] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #Cvv] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryMonth] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryMonth] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "01"]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "01"]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="01"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="01"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryYear] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryYear] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="2024"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="2024"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submitBtn] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submitBtn] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="submitBtn"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="submitBtn"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .account-flow-sign-up] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .account-flow-sign-up] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #AccountFlowSignUpModalViewModel_Email] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #AccountFlowSignUpModalViewModel_Email] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Email" name="AccountFlowSignUpModalViewModel.Email"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Email" name="AccountFlowSignUpModalViewModel.Email"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Email" name="AccountFlowSignUpModalViewModel.Email"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Email" name="AccountFlowSignUpModalViewModel.Email"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #AccountFlowSignUpModalViewModel_Password] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #AccountFlowSignUpModalViewModel_Password] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Password" name="AccountFlowSignUpModalViewModel.Password"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Password" name="AccountFlowSignUpModalViewModel.Password"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Password" name="AccountFlowSignUpModalViewModel.Password"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_Password" name="AccountFlowSignUpModalViewModel.Password"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #AccountFlowSignUpModalViewModel_ConfirmPassword] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #AccountFlowSignUpModalViewModel_ConfirmPassword] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_ConfirmPassword" name="AccountFlowSignUpModalViewModel.ConfirmPassword"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_ConfirmPassword" name="AccountFlowSignUpModalViewModel.ConfirmPassword"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_ConfirmPassword" name="AccountFlowSignUpModalViewModel.ConfirmPassword"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="AccountFlowSignUpModalViewModel_ConfirmPassword" name="AccountFlowSignUpModalViewModel.ConfirmPassword"] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #signUpButton, .account-flow-sign-up-button] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #signUpButton, .account-flow-sign-up-button] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#3: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#3: SeleniumTest.Highlander.Elements.SignUpDialog - signUp success 
+Worker#3: SeleniumTest.Highlander.Elements.SignUpDialog - signUp success 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking TearDown method ... 
+Worker#3: SeleniumTest.Highlander.Tests.Funnel.GuestFunnelTests - invoking TearDown method ... 
+Worker#3: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#3: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestSuite" id="0-2185" name="Sanity" fullname="SeleniumTest.Highlander.Tests.Sanity" runstate="Runnable" testcasecount="42" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.842038" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="2">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestSuite" id="0-2186" name="SubscriptionTests" fullname="SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:35:28Z" duration="170.540576" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
+              <properties />
+              <test-suite type="TestFixture" id="0-1918" name="PayPalSubscriptionTests" fullname="SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests" classname="SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:35:28Z" duration="170.539762" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
+                <properties>
+                  <property name="Category" value="HighlanderIntegration" />
+                  <property name="Category" value="HLSubscription" />
+                  <property name="Category" value="CustomerFacingSuite" />
+                  <property name="Category" value="NormalIntegrationTests" />
+                  <property name="Category" value="CustomerRegression" />
+                  <property name="Category" value="HighlanderIntegration" />
+                  <property name="Category" value="HLFunnel" />
+                  <property name="Category" value="CustomerFacingSuite" />
+                  <property name="Category" value="NormalIntegrationTests" />
+                  <property name="Category" value="CustomerRegression" />
+                </properties>
+                <output><![CDATA[Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: dVXnmLTRKh/pearl 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: dVXnmLTRKh/pearl 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: wObCeJxBxc/pearl 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: wObCeJxBxc/pearl 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking FixtureSetUp method... 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking FixtureSetUp method... 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking FixtureTearDown method... 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking FixtureTearDown method... 
+Worker#4: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#4: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+                <test-case id="0-1919" name="ShouldPayWithPayPalForSubscription_TC2450" fullname="SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests.ShouldPayWithPayPalForSubscription_TC2450" methodname="ShouldPayWithPayPalForSubscription_TC2450" classname="SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests" runstate="Runnable" seed="964707645" result="Passed" start-time="2016-03-01 08:32:58Z" end-time="2016-03-01 08:35:28Z" duration="150.087455" asserts="1">
+                  <properties>
+                    <property name="Category" value="Smoke" />
+                  </properties>
+                  <output><![CDATA[Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking SetUp method... 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking SetUp method... 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: uWfAXCBhDB/pearl 
+Worker#4: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: uWfAXCBhDB/pearl 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/home-page.aspx?optimizely_disable=true] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/home-page.aspx?optimizely_disable=true] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #selectedCategoryLabel] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #selectedCategoryLabel] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='questioninput']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='questioninput']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: a.input-submit.ja-button-orange] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: a.input-submit.ja-button-orange] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #btnContinue] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #btnContinue] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [OptionalInformationPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [OptionalInformationPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="btnContinue" name="ctl00$BodyContent$ctlOldOptionalDetails$btnContinue"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="btnContinue" name="ctl00$BodyContent$ctlOldOptionalDetails$btnContinue"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnSubmit']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnSubmit']] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [PricingPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [PricingPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_RadioPricing_btnSubmit" name="ctl00$BodyContent$RadioPricing$btnSubmit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_RadioPricing_btnSubmit" name="ctl00$BodyContent$RadioPricing$btnSubmit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='CreditCardForm_btnSubmit']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='CreditCardForm_btnSubmit']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_paypalLogo] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_paypalLogo] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [div id="JA_paypalLogo"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [div id="JA_paypalLogo"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_CreditCardForm_btnSubmit" name="ctl00$BodyContent$CreditCardForm$btnSubmit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_CreditCardForm_btnSubmit" name="ctl00$BodyContent$CreditCardForm$btnSubmit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loginBox, #loginForm] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loginBox, #loginForm] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loginForm] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loginForm] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="email" name="email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="email" name="email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="email" name="email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="email" name="email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#password] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#password] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="password" name="password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="password" name="password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="password" name="password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="password" name="password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: button#btnLogin, input[type=submit]] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: button#btnLogin, input[type=submit]] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input name="_eventId_submit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input name="_eventId_submit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue_abovefold, #confirmButtonTop, .confirmButton] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue_abovefold, #confirmButtonTop, .confirmButton] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="confirmButtonTop" name="_eventId_submit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="confirmButtonTop" name="_eventId_submit"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnProceed']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnProceed']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [ProcessingCompletePageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [ProcessingCompletePageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='Email']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='Email']] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .form-submit] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .form-submit] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [WaitingRoomPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: SeleniumTest.Highlander.Flows.PayPalFunnelHybrid - working with [WaitingRoomPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sub-modal] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sub-modal] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #tier-basic] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #tier-basic] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="tier-basic" name="tiere34a172daeab459b915403ad862c72c2"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="tier-basic" name="tiere34a172daeab459b915403ad862c72c2"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .start-offer.ja-button-orange, .secondary .submit-offer, .secondary .new-submit-offer] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .start-offer.ja-button-orange, .secondary .submit-offer, .secondary .new-submit-offer] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loginBox, #loginForm] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loginBox, #loginForm] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_email" name="login_email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_email" name="login_email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_email] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_email" name="login_email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_email" name="login_email"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_password] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_password] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_password" name="login_password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_password" name="login_password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_password] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#login_password] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_password" name="login_password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="login_password" name="login_password"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#submitLogin] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#submitLogin] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="submitLogin" name="login.x"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="submitLogin" name="login.x"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#continue, input#confirmButtonTop] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input#continue, input#confirmButtonTop] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue" name="continue"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue" name="continue"] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .sub-offer-thank-you] 
+Worker#4: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .sub-offer-thank-you] 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking TearDown method ... 
+Worker#4: SeleniumTest.Highlander.Tests.Sanity.SubscriptionTests.PayPalSubscriptionTests - invoking TearDown method ... 
+Worker#4: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#4: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="0-2189" name="FunnelTests" fullname="SeleniumTest.Highlander.Tests.Sanity.FunnelTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:29Z" duration="291.319618" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
+              <properties />
+              <test-suite type="TestFixture" id="0-1951" name="RepeatFunnelTests" fullname="SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests" classname="SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:29Z" duration="291.319494" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
+                <properties>
+                  <property name="Category" value="Smoke" />
+                  <property name="Category" value="HighlanderIntegration" />
+                  <property name="Category" value="HLFunnel" />
+                  <property name="Category" value="CustomerFacingSuite" />
+                  <property name="Category" value="NormalIntegrationTests" />
+                  <property name="Category" value="CustomerRegression" />
+                </properties>
+                <output><![CDATA[Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: SPkoYMqMRg/pearl 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: SPkoYMqMRg/pearl 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: opbhjJswsA/pearl 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: opbhjJswsA/pearl 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking FixtureSetUp method... 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking FixtureSetUp method... 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking FixtureTearDown method... 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking FixtureTearDown method... 
+Worker#1: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#1: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+                <test-case id="0-1952" name="ShouldProceedWithMvcRepeatFunnelAsJaGuestUser_TC2305" fullname="SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests.ShouldProceedWithMvcRepeatFunnelAsJaGuestUser_TC2305" methodname="ShouldProceedWithMvcRepeatFunnelAsJaGuestUser_TC2305" classname="SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests" runstate="Runnable" seed="1845645714" result="Passed" start-time="2016-03-01 08:32:58Z" end-time="2016-03-01 08:37:29Z" duration="270.776585" asserts="1">
+                  <properties>
+                    <property name="Description" value="Verify JA Guest User Succeeds with MVC repeat funnel" />
+                  </properties>
+                  <output><![CDATA[Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking SetUp method... 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking SetUp method... 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: uiVTJJFCec/pearl 
+Worker#1: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: uiVTJJFCec/pearl 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/home-page.aspx?optimizely_disable=true] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/home-page.aspx?optimizely_disable=true] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #selectedCategoryLabel] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #selectedCategoryLabel] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='questioninput']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='questioninput']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: a.input-submit.ja-button-orange] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: a.input-submit.ja-button-orange] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #btnContinue] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #btnContinue] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [OptionalInformationPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [OptionalInformationPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="btnContinue" name="ctl00$BodyContent$ctlOldOptionalDetails$btnContinue"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="btnContinue" name="ctl00$BodyContent$ctlOldOptionalDetails$btnContinue"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnSubmit']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnSubmit']] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [PricingPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [PricingPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_RadioPricing_btnSubmit" name="ctl00$BodyContent$RadioPricing$btnSubmit"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_RadioPricing_btnSubmit" name="ctl00$BodyContent$RadioPricing$btnSubmit"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='CreditCardForm_btnSubmit']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='CreditCardForm_btnSubmit']] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [CreditCardPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [CreditCardPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_sectionBody_creditCard] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_sectionBody_creditCard] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardTypeSelect] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardTypeSelect] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[normalize-space(.) = "Visa"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[normalize-space(.) = "Visa"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardNumber] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardNumber] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cvv] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cvv] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationMonth] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationMonth] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.TagName: option] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.TagName: option] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="01 - Jan"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="01 - Jan"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationYear] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationYear] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="2024"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="2024"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_CreditCardForm_btnSubmit" name="ctl00$BodyContent$CreditCardForm$btnSubmit"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_CreditCardForm_btnSubmit" name="ctl00$BodyContent$CreditCardForm$btnSubmit"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnProceed']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnProceed']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [ProcessingCompletePageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [ProcessingCompletePageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='Email']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='Email']] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .form-submit] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .form-submit] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [WaitingRoomPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [WaitingRoomPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard?state=None] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard?state=None] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: div.ja-tutorial.ja-arrow-box.bottom.arrow-left] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: div.ja-tutorial.ja-arrow-box.bottom.arrow-left] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ask-question-box #mainForm, .ask-question-box.tabbed] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ask-question-box #mainForm, .ask-question-box.tabbed] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #askQuestion] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #askQuestion] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [button id="askQuestion" text="Ask a question"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [button id="askQuestion" text="Ask a question"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ask-question-box.tabbed] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ask-question-box.tabbed] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: ul.sublist a, li.maintab span.tab] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: ul.sublist a, li.maintab span.tab] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #NewQuestion_Text, #QuestionText, #QuestionTextDD] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #NewQuestion_Text, #QuestionText, #QuestionTextDD] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="QuestionText" name="QuestionText"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input[type='submit'], .input-submit] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: input[type='submit'], .input-submit] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [button text="Get an Answer"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [button text="Get an Answer"] 
+Worker#1: SeleniumTest.Highlander.Flows.RepeatCustomerFunnel - working with [OptionalDetailsPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.RepeatCustomerFunnel - working with [OptionalDetailsPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue-button] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue-button] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue-button"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue-button"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #duplicate-question-modal] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #duplicate-question-modal] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue-process] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #continue-process] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue-process"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="continue-process"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderDetail] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderDetail] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderUrgency] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #sliderUrgency] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .ui-slider-handle] 
+Worker#1: SeleniumTest.Highlander.Flows.RepeatCustomerFunnel - working with [PricingPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.RepeatCustomerFunnel - working with [PricingPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submit] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submit] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #cssNamespace] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #cssNamespace] 
+Worker#1: SeleniumTest.Highlander.Flows.RepeatCustomerFunnel - working with [PaymentPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: SeleniumTest.Highlander.Flows.RepeatCustomerFunnel - working with [PaymentPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .tab-link.cc-tab] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .tab-link.cc-tab] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [dd text="Credit Card"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [dd text="Credit Card"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #CardNumber] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #CardNumber] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="CardNumber" name="CardNumber"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #Cvv] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #Cvv] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Cvv" name="Cvv"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryMonth] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryMonth] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "01"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "01"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryYear] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #ExpiryYear] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submitBtn] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #submitBtn] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="submitBtn"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="submitBtn"] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard] 
+Worker#1: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard] 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking TearDown method ... 
+Worker#1: SeleniumTest.Highlander.Tests.Sanity.FunnelTests.RepeatFunnelTests - invoking TearDown method ... 
+Worker#1: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#1: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="0-2191" name="BonusTests" fullname="SeleniumTest.Highlander.Tests.Sanity.BonusTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.841947" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-suite type="TestFixture" id="0-1963" name="BonusAmountTests" fullname="SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests" classname="SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2016-03-01 08:32:37Z" end-time="2016-03-01 08:37:56Z" duration="318.841826" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+                <properties>
+                  <property name="Category" value="Smoke" />
+                  <property name="Category" value="HLBonus" />
+                  <property name="Category" value="HighlanderIntegration" />
+                  <property name="Category" value="CustomerFacingSuite" />
+                  <property name="Category" value="NormalIntegrationTests" />
+                  <property name="Category" value="CustomerRegression" />
+                </properties>
+                <failure>
+                  <message><![CDATA[One or more child tests had errors]]></message>
+                </failure>
+                <output><![CDATA[Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating expert account 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: NiCirOCrXF/pearl 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: NiCirOCrXF/pearl 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - assign categories: [50583,50664,50674,51002,52015,54753,54920,55490,56515,56528,59191,59378,59480,59780,60133,60248,61752,63390,64066,65709,65710,65711,66692,66788,66789,66790,67395,67534,67853,70843] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [EXPERT,PqlProfessional] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - accept policy notifications: [2,3] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating admin account 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: ESgIXQUfWc/pearl 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: ESgIXQUfWc/pearl 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - assign user classes: [ADMIN,Admin-Eng,Admin-Prod,Admin-QA,ContentAdministrators,EditQuestionMetaData] 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking FixtureSetUp method... 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking FixtureSetUp method... 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking FixtureTearDown method... 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking FixtureTearDown method... 
+Worker#2: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#2: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+                <test-case id="0-1964" name="ShouldCheckErrorsAndGiveCustomBonus_TC1445" fullname="SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests.ShouldCheckErrorsAndGiveCustomBonus_TC1445" methodname="ShouldCheckErrorsAndGiveCustomBonus_TC1445" classname="SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests" runstate="Runnable" seed="1371674676" result="Failed" label="Error" start-time="2016-03-01 08:32:59Z" end-time="2016-03-01 08:37:56Z" duration="296.763423" asserts="0">
+                  <properties>
+                    <property name="Description" value="Verify Custom Bonus Error for Min/Max amount. Verify Custom bonus submitted." />
+                  </properties>
+                  <failure>
+                    <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                    <stack-trace><![CDATA[   at NUnitReporter.EventReport.Events.BasicEvent.ConvertArgumentToString(Object argument)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NUnitReporter.EventReport.Events.BasicEvent..ctor(IActivity parent, String description, IEnumerable`1 arguments)
+   at NUnitReporter.EventReport.Events.Activity..ctor(IActivity parent, String description, Object[] arguments)
+   at NUnitReporter.EventReport.DefaultEventReport.RecordActivityStarted(String description, Object[] args)
+   at NUnitReporter.EventReport.ProxyFactory.ReportingInerceptor.ProceedAndReport(IInvocation invocation, IEventReport report)
+   at NUnitReporter.EventReport.ProxyFactory.ReportingInerceptor.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.XBoardPageProxy.TryFindQuestions(String questionString, QuestionOnXboard[]& questions)
+   at SeleniumTest.Professional.Pages.XBoardPage.GetQuestionOnPQL(String questionString) in D:\git\ja-automation\SeleniumTest\SeleniumTest\Professional\Pages\XBoardPage.cs:line 353
+   at SeleniumTest.Professional.Pages.XBoardPage.OpenPQAInNewWindow(String questionString) in D:\git\ja-automation\SeleniumTest\SeleniumTest\Professional\Pages\XBoardPage.cs:line 395
+   at Castle.Proxies.Invocations.XBoardPage_OpenPQAInNewWindow.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at NUnitReporter.EventReport.ProxyFactory.ReportingInerceptor.ProceedAndReport(IInvocation invocation, IEventReport report)
+   at NUnitReporter.EventReport.ProxyFactory.ReportingInerceptor.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.XBoardPageProxy.OpenPQAInNewWindow(String questionString)
+   at SeleniumTest.Highlander.Tests.Sanity.ProductBaseTests.<ExpertAnswerQuestionFromPqa>b__7_0(XBoardPage expert) in D:\git\ja-automation\SeleniumTest\SeleniumTest\Highlander\Tests\Sanity\ProductBaseTests.cs:line 123
+   at SeleniumTest.Common.Browsers.BrowserWrapper.On[TPage](Action`1 action) in D:\git\ja-automation\SeleniumTest\SeleniumTest\Common\Browsers\BrowserWrapper.cs:line 68
+   at SeleniumTest.Highlander.Tests.Sanity.ProductBaseTests.ExpertAnswerQuestionFromPqa() in D:\git\ja-automation\SeleniumTest\SeleniumTest\Highlander\Tests\Sanity\ProductBaseTests.cs:line 120
+   at SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests.ShouldCheckErrorsAndGiveCustomBonus_TC1445() in D:\git\ja-automation\SeleniumTest\SeleniumTest\Highlander\Tests\Sanity\BonusTests\BonusAmountTests.cs:line 16]]></stack-trace>
+                  </failure>
+                  <output><![CDATA[Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking SetUp method... 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking SetUp method... 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: RBOUnxnWQT/pearl 
+Worker#2: SeleniumTest.Common.Databases.UserAccountFactory - creating profile: RBOUnxnWQT/pearl 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/home-page.aspx?optimizely_disable=true] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/home-page.aspx?optimizely_disable=true] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #stickyQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_tabbedQuestionBox] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #selectedCategoryLabel] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #selectedCategoryLabel] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='questioninput']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='questioninput']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [textarea id="questioninput" name="tabbedQBox_questioninput"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: a.input-submit.ja-button-orange] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: a.input-submit.ja-button-orange] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #btnContinue] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #btnContinue] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [OptionalInformationPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [OptionalInformationPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="btnContinue" name="ctl00$BodyContent$ctlOldOptionalDetails$btnContinue"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="btnContinue" name="ctl00$BodyContent$ctlOldOptionalDetails$btnContinue"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnSubmit']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnSubmit']] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [PricingPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [PricingPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_RadioPricing_btnSubmit" name="ctl00$BodyContent$RadioPricing$btnSubmit"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_RadioPricing_btnSubmit" name="ctl00$BodyContent$RadioPricing$btnSubmit"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='CreditCardForm_btnSubmit']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='CreditCardForm_btnSubmit']] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [CreditCardPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [CreditCardPageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_sectionBody_creditCard] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_sectionBody_creditCard] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardTypeSelect] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardTypeSelect] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[normalize-space(.) = "Visa"]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[normalize-space(.) = "Visa"]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardNumber] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cardNumber] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cardNumber" name="card_number"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cvv] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_cvv] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_cvv" name="cvv"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationMonth] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationMonth] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.TagName: option] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.TagName: option] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="01 - Jan"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="01 - Jan"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationYear] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_expirationYear] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.XPath: .//option[@value = "2024"]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="2024"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [option text="2024"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_CreditCardForm_btnSubmit" name="ctl00$BodyContent$CreditCardForm$btnSubmit"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input id="ctl00_BodyContent_CreditCardForm_btnSubmit" name="ctl00$BodyContent$CreditCardForm$btnSubmit"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnProceed']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='btnProceed']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - no such element	... 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [ProcessingCompletePageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [ProcessingCompletePageProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [EmailCapturePageMvcProxy wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='Email']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id$='Email']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="Email" name="Email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .form-submit] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: .form-submit] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - click on: [input ] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [WaitingRoomPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: SeleniumTest.Highlander.Flows.FunnelHybrid - working with [WaitingRoomPageProxy_1 wrapping [OpenQA.Selenium.Support.Events.EventFiringWebDriver]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://my-secure.stg.justanswer.local/dashboard] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/admin/tools/set-testpath.aspx?tp=1065] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/admin/tools/set-testpath.aspx?tp=1065] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/login.aspx] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - navigate to: [http://stg.justanswer.local/login.aspx] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_returning] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_returning] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_email] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_email] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_email" name="email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_email" name="email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_email" name="email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_email" name="email"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_password] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #JA_password] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_password" name="password"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_password" name="password"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_password" name="password"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - change value: [input id="JA_password" name="password"] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id*='btnLogin']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: [id*='btnLogin']] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #inboxButton] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #inboxButton] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.JavaScript: window.$ ? $('li.ql-row').filter(function() { return $(this).find('.toggleHref').text().replace(/\W+/g, '') === 'WhatistheEtiquetteinUSfordinnersMxucCIMAQqHighlander'; }).get() : [], System.Object[]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.JavaScript: window.$ ? $('li.ql-row').filter(function() { return $(this).find('.toggleHref').text().replace(/\W+/g, '') === 'WhatistheEtiquetteinUSfordinnersMxucCIMAQqHighlander'; }).get() : [], System.Object[]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - stale element reference: element is not attached to the page document	... 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - stale element reference: element is not attached to the page document	... 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #inboxButton] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #inboxButton] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.CssSelector: #loadingIndicator] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.JavaScript: window.$ ? $('li.ql-row').filter(function() { return $(this).find('.toggleHref').text().replace(/\W+/g, '') === 'WhatistheEtiquetteinUSfordinnersMxucCIMAQqHighlander'; }).get() : [], System.Object[]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.JavaScript: window.$ ? $('li.ql-row').filter(function() { return $(this).find('.toggleHref').text().replace(/\W+/g, '') === 'WhatistheEtiquetteinUSfordinnersMxucCIMAQqHighlander'; }).get() : [], System.Object[]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.JavaScript: window.$ ? $('li.ql-row').filter(function() { return $(this).find('.toggleHref').text().replace(/\W+/g, '') === 'WhatistheEtiquetteinUSfordinnersMxucCIMAQqHighlander'; }).get() : [], System.Object[]] 
+Worker#2: OpenQA.Selenium.Support.Events.EventFiringWebDriver - find by: [By.JavaScript: window.$ ? $('li.ql-row').filter(function() { return $(this).find('.toggleHref').text().replace(/\W+/g, '') === 'WhatistheEtiquetteinUSfordinnersMxucCIMAQqHighlander'; }).get() : [], System.Object[]] 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking TearDown method ... 
+Worker#2: SeleniumTest.Highlander.Tests.Sanity.BonusTests.BonusAmountTests - invoking TearDown method ... 
+Worker#2: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+Worker#2: SeleniumTest.Common.Scopes.ScopedRegistry`1[[SeleniumTest.Common.Browsers.AbstractBrowser, SeleniumTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - Disposing 3 instances of AbstractBrowser 
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

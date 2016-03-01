@@ -24,7 +24,7 @@ namespace NUnitReporterTests.EventReport
         [Test]
         public void ShouldCreateNestedEvents()
         {
-            var report = new DefaultEventReport();
+            var report = new NUnitReporter.EventReport.EventReport();
 
             var guid = report.RecordActivityStarted("Dancing with a spouse", "Anna");
             report.RecordEvent("Taking a drink", "Wine");
@@ -63,7 +63,7 @@ namespace NUnitReporterTests.EventReport
         [Test]
         public void ShouldRecordSreenshotEvent()
         {
-            var report = new DefaultEventReport();
+            var report = new NUnitReporter.EventReport.EventReport();
             report.RecordScreenshot("sun_flower.jpg");
 
             Assert.That(report.RootActivity.Nested, Has.Count.EqualTo(1).And.Some.Matches(
@@ -74,7 +74,7 @@ namespace NUnitReporterTests.EventReport
         [Test]
         public void ShouldRecordErrorEvent()
         {
-            var report = new DefaultEventReport();
+            var report = new NUnitReporter.EventReport.EventReport();
 
             Exception exception = null;
 
@@ -99,7 +99,7 @@ namespace NUnitReporterTests.EventReport
         [TestCaseSource("ArgumentsTestCases")]
         public void ShouldConvertEventArgumensToString(Object[] arguments, String[] argumentsAsStrings)
         {
-            var report = new DefaultEventReport();
+            var report = new NUnitReporter.EventReport.EventReport();
 
             report.RecordEvent("PushingTheBall", arguments);
 
@@ -112,7 +112,7 @@ namespace NUnitReporterTests.EventReport
         [TestCaseSource("ArgumentsTestCases")]
         public void ShouldConvertActivityArgumensToString(Object[] arguments, String[] argumentsAsStrings)
         {
-            var report = new DefaultEventReport();
+            var report = new NUnitReporter.EventReport.EventReport();
 
             var guid = report.RecordActivityStarted("SmashingTheCar", arguments);
             report.RecordActivityFinished(guid);

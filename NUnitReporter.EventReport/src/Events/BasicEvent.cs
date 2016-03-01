@@ -65,6 +65,11 @@ namespace NUnitReporter.EventReport.Events
 
         private static String ConvertArgumentToString(Object argument)
         {
+            if (argument == null)
+            {
+                return "Null";
+            }
+
             if (argument is String)
             {
                 return (String) argument;

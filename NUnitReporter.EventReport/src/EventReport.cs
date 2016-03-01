@@ -5,7 +5,7 @@ using NUnitReporter.EventReport.Events;
 
 namespace NUnitReporter.EventReport
 {
-    public class DefaultEventReport : IEventReport
+    public class EventReport : IEventReport
     {
         [JsonProperty("root")]
         private readonly IActivity _rootActivity;
@@ -14,7 +14,7 @@ namespace NUnitReporter.EventReport
 
         private readonly Mutex _mutex = new Mutex();
 
-        public DefaultEventReport()
+        public EventReport()
         {
             _rootActivity = _currentActivity = new RootActivity();
         }
@@ -104,7 +104,7 @@ namespace NUnitReporter.EventReport
             _mutex.ReleaseMutex();
         }
 
-        protected bool Equals(DefaultEventReport other)
+        protected bool Equals(EventReport other)
         {
             return Equals(_rootActivity, other._rootActivity);
         }
@@ -114,7 +114,7 @@ namespace NUnitReporter.EventReport
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((DefaultEventReport) obj);
+            return Equals((EventReport) obj);
         }
 
         public override int GetHashCode()
