@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using Newtonsoft.Json;
 using NUnitReporter.EventReport.Events;
@@ -29,7 +30,12 @@ namespace NUnitReporter.EventReport
 
         public void RecordEvent(string description, params object[] args)
         {
-            RecordEvent(new BasicEvent(_currentActivity, description, args));
+            var newEvent = new BasicEvent(_currentActivity, description, args);
+
+            if (!newEvent.IsDuplicate(_currentActivity.Nested.LastOrDefault() as BasicEvent))
+            {
+                RecordEvent(newEvent);
+            }
         }
 
         public void RecordScreenshot(string filePath)

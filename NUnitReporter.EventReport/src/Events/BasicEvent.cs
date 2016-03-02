@@ -37,6 +37,13 @@ namespace NUnitReporter.EventReport.Events
             get { return _arguments; }
         }
 
+        public bool IsDuplicate(BasicEvent otherEvent)
+        {
+            return otherEvent != null 
+                && otherEvent.Description == _description 
+                && otherEvent.Arguments.SequenceEqual(_arguments);
+        }
+
         protected bool Equals(BasicEvent other)
         {
             return base.Equals(other)

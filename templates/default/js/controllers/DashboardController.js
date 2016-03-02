@@ -38,7 +38,6 @@ function DashboardController($scope, $location, $routeParams, StateStorage, repo
 
     $scope.eventTreeOptions = {
         nodeChildren: 'children',
-        dirSelectable: false,
         injectClasses: {
             ul: 'list-group',
             li: 'list-group-item',

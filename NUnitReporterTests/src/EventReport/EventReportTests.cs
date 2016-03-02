@@ -96,6 +96,17 @@ namespace NUnitReporterTests.EventReport
                 ));
         }
 
+        [Test]
+        public void ShouldSkipDuplicateEvent()
+        {
+            var report = new DefaultEventReport();
+
+            report.RecordEvent("abcd", 1, 2);
+            report.RecordEvent("abcd", 1, 2);
+
+            Assert.That(report.RootActivity.Nested, Has.Count.EqualTo(1));
+        }
+
         [TestCaseSource("ArgumentsTestCases")]
         public void ShouldConvertEventArgumensToString(object[] arguments, string[] argumentsAsStrings)
         {
