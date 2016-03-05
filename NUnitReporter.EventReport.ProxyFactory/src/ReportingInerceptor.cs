@@ -16,7 +16,9 @@ namespace NUnitReporter.EventReport.ProxyFactory
         {
             var report = _reportFactory.CurrentTestReport;
 
-            if (report != null && IsAligibleForReporting(invocation))
+            EventReportAttribute attribute = GetEventReportAttribute(invocation);
+
+            if (report != null && IsAligibleForReporting(invocation, attribute))
             {
                 ReportAndProceed(invocation, report);
             }
@@ -48,6 +50,18 @@ namespace NUnitReporter.EventReport.ProxyFactory
             }
         }
 
+        private static EventReportAttribute GetEventReportAttribute(IInvocation invocation)
+        {
+            var eventReportAttributes = invocation.Method.GetCustomAttributes(typeof(EventReportAttribute), true);
+
+            if (eventReportAttributes.Length == 0)
+            {
+                return null;
+            }
+
+            return (EventReportAttribute) eventReportAttributes[0];
+        }
+
         private static String FormatInvocationName(IInvocation invocation)
         {
             if (IsPropertySetter(invocation))
@@ -63,8 +77,13 @@ namespace NUnitReporter.EventReport.ProxyFactory
             return String.Format("{0}::{1}", invocation.TargetType.Name, invocation.Method.Name);
         }
 
-        private static Boolean IsAligibleForReporting(IInvocation invocation)
+        private static Boolean IsAligibleForReporting(IInvocation invocation, EventReportAttribute attribute)
         {
+            if (attribute != null && attribute.Ignore)
+            {
+                return false;
+            }
+
             if (invocation.Method.IsSpecialName)
             {
                 return IsPropertySetter(invocation);

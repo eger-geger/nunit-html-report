@@ -30,12 +30,7 @@ namespace NUnitReporter.EventReport
 
         public void RecordEvent(string description, params object[] args)
         {
-            var newEvent = new BasicEvent(_currentActivity, description, args);
-
-            if (!newEvent.IsDuplicate(_currentActivity.Nested.LastOrDefault() as BasicEvent))
-            {
-                RecordEvent(newEvent);
-            }
+            RecordEvent(new BasicEvent(_currentActivity, description, args));
         }
 
         public void RecordScreenshot(string filePath)

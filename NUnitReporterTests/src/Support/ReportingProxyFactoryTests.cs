@@ -137,12 +137,26 @@ namespace NUnitReporterTests.Support
             _eventReportMock.Verify(r => r.RecordActivityStarted("ToString"), Times.Never);
             _eventReportMock.Verify(r => r.RecordActivityStarted("GetHashCode"), Times.Never);
         }
+
+        [Test]
+        public void ShouldNotReportIgnoredMethods()
+        {
+            var phoneMock = new Mock<IPhone>();
+            var phoneProxy = _proxyFactory.Create<Phone>(phoneMock.Object);
+
+            phoneProxy.SendMessage();
+
+            phoneMock.Verify(p => p.SendMessage(), Times.Once);
+
+            _eventReportMock.Verify(r => r.RecordActivityStarted("SendMessage"), Times.Never);
+        }
     }
 
     public interface IPhone
     {
         void Call(string phone);
         void Charge();
+        void SendMessage();
 
         String Owner { get; set; }
     }
@@ -172,6 +186,12 @@ namespace NUnitReporterTests.Support
         public virtual void Charge()
         {
             _wrappedPhone.Charge();
+        }
+
+        [EventReport(Ignore = true)]
+        public virtual void SendMessage()
+        {
+            _wrappedPhone.SendMessage();
         }
 
     }
