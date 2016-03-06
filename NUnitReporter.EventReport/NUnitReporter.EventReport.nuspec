@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>Nure.EventReport</id>
-    <version>1.0.0-beta-1</version>
+    <version>$version$</version>
     <title>Nure.EventReport</title>
     <authors>Ivan Mihaylovskyy</authors>
     <owners>Ivan Mihaylovskyy</owners>
     <licenseUrl>https://raw.githubusercontent.com/eger-geger/nunit-html-report/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/eger-geger/nunit-html-report</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Reporting event model compatible with NUnit report generator (nure)</description>
+    <description>Reporting event model compatible with NUnit report generator (Nure).</description>
     <releaseNotes>Initial release</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>NUnit</tags>
+    <tags>NUnit Nure</tags>
   </metadata>
 </package>

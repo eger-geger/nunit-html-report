@@ -22,7 +22,7 @@ namespace NUnitReporter
 
             try
             {
-                Validate.FilePath(options.TestResultXmlPath, "Test Result Xml Path");
+                Validate.FileExist(options.TestResultXmlPath, "Test Result Xml Path");
 
                 var nunitReport = new NUnitTestResult(options.TestResultXmlPath);
 

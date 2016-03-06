@@ -133,7 +133,7 @@ namespace NUnitReporter.NUnitReports
 
         private static XmlDocument ValidateAndLoadTestResultXml(String testResultXml)
         {
-            Validate.FilePath(testResultXml, "testResultXml is null or empty");
+            Validate.FileExist(testResultXml, "testResultXml is null or empty");
 
             var document = new XmlDocument();
 

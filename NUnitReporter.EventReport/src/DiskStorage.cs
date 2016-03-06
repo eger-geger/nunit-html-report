@@ -90,7 +90,7 @@ namespace NUnitReporter.EventReport
 
         private FileInfo GetReportFile(string id)
         {
-            return new FileInfo(Path.Combine(_workingDirectory.Value.FullName, $"{id}.json"));
+            return new FileInfo(Path.Combine(_workingDirectory.Value.FullName, $"{id}_event_log.json"));
         }
 
         private static DirectoryInfo CreateDirectoryIfNotExist(string path)

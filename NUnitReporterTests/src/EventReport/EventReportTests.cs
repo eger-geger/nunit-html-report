@@ -61,17 +61,6 @@ namespace NUnitReporterTests.EventReport
         }
 
         [Test]
-        public void ShouldRecordSreenshotEvent()
-        {
-            var report = new DefaultEventReport();
-            report.RecordScreenshot("sun_flower.jpg");
-
-            Assert.That(report.RootActivity.Nested, Has.Count.EqualTo(1).And.Some.Matches(
-                Is.InstanceOf<ScreenshotEvent>().And.Property("FilePath").EqualTo("sun_flower.jpg")
-                ));
-        }
-
-        [Test]
         public void ShouldRecordErrorEvent()
         {
             var report = new DefaultEventReport();

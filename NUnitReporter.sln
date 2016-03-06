@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitReporter.EventReport",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitReporter.EventReport.ProxyFactory", "NUnitReporter.EventReport.ProxyFactory\NUnitReporter.EventReport.ProxyFactory.csproj", "{8383D4F2-0384-4D94-8ECE-D98CA796A20D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitReporter.EventReport.NUnit3", "NUnitReporter.EventReport.NUnit3\NUnitReporter.EventReport.NUnit3.csproj", "{367A8EA7-C034-4BAA-98D5-B1402CC8B170}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{8383D4F2-0384-4D94-8ECE-D98CA796A20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8383D4F2-0384-4D94-8ECE-D98CA796A20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8383D4F2-0384-4D94-8ECE-D98CA796A20D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{367A8EA7-C034-4BAA-98D5-B1402CC8B170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{367A8EA7-C034-4BAA-98D5-B1402CC8B170}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{367A8EA7-C034-4BAA-98D5-B1402CC8B170}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{367A8EA7-C034-4BAA-98D5-B1402CC8B170}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -38,12 +38,6 @@ namespace NUnitReporter.EventReport
         void RecordActivityFinished(string descriptor);
 
         /// <summary>
-        ///     Record screen-shot  event
-        /// </summary>
-        /// <param name="filePath">Absolute screen-shot file path</param>
-        void RecordScreenshot(string filePath);
-
-        /// <summary>
         ///     Record error event
         /// </summary>
         /// <param name="exception">Error to record</param>

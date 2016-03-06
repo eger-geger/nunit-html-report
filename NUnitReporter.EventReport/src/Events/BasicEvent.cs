@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 namespace NUnitReporter.EventReport.Events
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class BasicEvent : AbstractActivity
+    internal class BasicEvent : AbstractActivity
     {
         [JsonProperty("arguments")]
         private readonly IList<String> _arguments;

@@ -15,13 +15,13 @@ namespace NUnitReporter
         [Option('o', "output", DefaultValue = "./", HelpText = "Path to output folder")]
         public String OutputFolderPath { get; set; }
 
-        [Option("json", HelpText = "Write TestResult.json to output")]
+        [Option("json", HelpText = "Write TestResult.json to output folder")]
         public Boolean WriteJson { get; set; }
 
-        [Option("xml", HelpText = "Write TestResult.xml to output")]
+        [Option("xml", HelpText = "Write TestResult.xml to output folder")]
         public Boolean WriteXml { get; set; }
 
-        [Option("html", HelpText = "Write HTML report to output")]
+        [Option("html", HelpText = "Write TestResult.html to output folder")]
         public Boolean WriteHtml { get; set; }
 
         [HelpOption]

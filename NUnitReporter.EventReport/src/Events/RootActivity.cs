@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace NUnitReporter.EventReport.Events
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class RootActivity : IActivity
+    internal class RootActivity : IActivity
     {
         [JsonProperty("children")]
         private readonly IList<IActivity> _nested;

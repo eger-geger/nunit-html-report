@@ -18,7 +18,7 @@ namespace NUnitReporter.Attachments
 
         public ImageAttachmentProvider(string imageFolderPath, string outputFolderPath)
         {
-            Validate.FolderPath(imageFolderPath, "imageFolderPath");
+            Validate.FolderExist(imageFolderPath, "imageFolderPath");
 
             if (String.IsNullOrEmpty(outputFolderPath))
             {

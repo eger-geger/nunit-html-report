@@ -56,10 +56,6 @@
     <Compile Include="src\Support\ReportingProxyFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NUnitReporter.EventReport.NUnit3\NUnitReporter.EventReport.NUnit3.csproj">
-      <Project>{367a8ea7-c034-4baa-98d5-b1402cc8b170}</Project>
-      <Name>NUnitReporter.EventReport.NUnit3</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NUnitReporter.EventReport.ProxyFactory\NUnitReporter.EventReport.ProxyFactory.csproj">
       <Project>{8383d4f2-0384-4d94-8ece-d98ca796a20d}</Project>
       <Name>NUnitReporter.EventReport.ProxyFactory</Name>

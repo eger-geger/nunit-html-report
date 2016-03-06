@@ -1,18 +1,23 @@
 <?xml version="1.0"?>
 <package >
     <metadata>
-        <id>nure</id>
-        <version>1.0.0-beta-1</version>
-        <title>nure</title>
+        <id>Nure</id>
+        <version>1.1.0.0</version>
+        <title>Nure</title>
         <authors>Ivan Mihaylovskyy</authors>
         <owners>Ivan Mihaylovskyy</owners>
         <licenseUrl>https://raw.githubusercontent.com/eger-geger/nunit-html-report/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/eger-geger/nunit-html-report</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Generates HTML report from NUnit3 TestResult.xml</description>
-        <releaseNotes>Merge dashboard and test case view</releaseNotes>
-        <copyright>Copyright 2015</copyright>
-        <tags>NUnit</tags>
+        <releaseNotes>
+          1.1.0.0:
+            - update report template
+            - add event log
+            - report generator bug-fixes
+        </releaseNotes>
+        <copyright>Copyright 2016</copyright>
+        <tags>NUnit Nure</tags>
     </metadata>
     <files>
        <file src="bin\Release\*.dll" target="tools" />

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace NUnitReporter.EventReport.Events
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class AbstractActivity : IActivity
+    internal abstract class AbstractActivity : IActivity
     {
         [JsonProperty]
         private readonly Guid _guid;

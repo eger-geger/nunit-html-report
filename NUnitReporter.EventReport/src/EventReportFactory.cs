@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace NUnitReporter.EventReport.NUnit3
+namespace NUnitReporter.EventReport
 {
     /// <summary>
     ///     Creates instances of <see cref="IEventReport" />.

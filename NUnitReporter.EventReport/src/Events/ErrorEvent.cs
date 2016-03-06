@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace NUnitReporter.EventReport.Events
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class ErrorEvent : AbstractActivity
+    internal class ErrorEvent : AbstractActivity
     {
         [JsonProperty("description")]
         private readonly string _message;

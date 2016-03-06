@@ -5,7 +5,7 @@ namespace NUnitReporter
 {
     public static class Validate
     {
-        public static void FilePath(String filePath, String nullOrEmptyMessage = null)
+        public static void FileExist(String filePath, String nullOrEmptyMessage = null)
         {
             if (String.IsNullOrEmpty(filePath))
             {
@@ -18,7 +18,7 @@ namespace NUnitReporter
             }
         }
 
-        public static void FolderPath(String folderPath, String nullOrEmptyMessage = null)
+        public static void FolderExist(String folderPath, String nullOrEmptyMessage = null)
         {
             if (String.IsNullOrEmpty(folderPath))
             {

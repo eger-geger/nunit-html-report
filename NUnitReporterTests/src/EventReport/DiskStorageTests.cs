@@ -18,7 +18,6 @@ namespace NUnitReporterTests.EventReport
         {
             var actionGuid = _report.RecordActivityStarted("take a rest", "couch");
             _report.RecordEvent("went home", "car", "legs");
-            _report.RecordScreenshot("sleeping_beauty.png");
             _report.RecordActivityFinished(actionGuid);
             _report.RecordError(new InvalidOperationException("It's Monday noon. Get up and work!"));
         }

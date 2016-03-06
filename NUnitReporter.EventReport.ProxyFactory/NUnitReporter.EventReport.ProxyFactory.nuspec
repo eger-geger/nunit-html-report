@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>Nure.EventReport.ProxyFactory</id>
-    <version>1.0.0-beta-1</version>
+    <version>$version$</version>
     <title>Nure.EventReport.ProxyFactory</title>
     <authors>Ivan Mihaylovskyy</authors>
     <owners>Ivan Mihaylovskyy</owners>
     <licenseUrl>https://raw.githubusercontent.com/eger-geger/nunit-html-report/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/eger-geger/nunit-html-report</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Reporting proxy factory for Nure</description>
+    <description>Proxy factory which creates objects recording every action to Nure.EventReport</description>
     <releaseNotes>Initial release</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>NUnit</tags>
+    <tags>NUnit Nure</tags>
   </metadata>
 </package>
