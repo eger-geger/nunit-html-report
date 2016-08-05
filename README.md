@@ -1,6 +1,6 @@
 # Nure (NUnit Report)
 
-HTML report generator for NUnit3. Basicaly it takes nunit 3 TestResult.xlm file as intput and produces human readable TestResult.html as an ouput. Following command will do that:
+HTML report generator for NUnit3. Basicaly it takes nunit 3 TestResult.xlm file as input and produces human readable TestResult.html as an ouput. Following command will do that:
 
 ```
 > path\to\nure.exe path\to\TestResult.xml -o path\to\output\folder
