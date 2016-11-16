@@ -2,7 +2,7 @@
 <package >
     <metadata>
         <id>Nure</id>
-        <version>1.1.0.0</version>
+        <version>1.1.0.1</version>
         <title>Nure</title>
         <authors>Ivan Mihaylovskyy</authors>
         <owners>Ivan Mihaylovskyy</owners>
@@ -11,6 +11,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Generates HTML report from NUnit3 TestResult.xml</description>
         <releaseNotes>
+          1.1.0.1:
+            - make test names selectable
           1.1.0.0:
             - update report template
             - add event log

@@ -17,8 +17,8 @@ using CommandLine;
 [assembly: Guid("4c567c1d-1959-487d-b42e-f745b235ede1")]
 
 [assembly: InternalsVisibleTo("NUnitReporterTests")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.1.0.1")]
+[assembly: AssemblyFileVersion("1.1.0.1")]
 [assembly: AssemblyUsage(
     "nure.exe TestResult.xml",
     "nure.exe TestResult.xml -o path/to/generated/report",
