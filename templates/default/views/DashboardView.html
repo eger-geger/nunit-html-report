@@ -26,14 +26,24 @@
             </a>
         </li>
     </ul>
-    <input 
-        type="search" 
-        class="form-control" 
-        ng-model="query" 
-        uib-typeahead="name as tc.name for tc in testCases | filter:$viewValue | limitTo:8" 
-        typeahead-on-select="setQueryFilterValue($item.name)" 
-        placeholder="Test Case Filter" 
-    />
+      <div class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input 
+                 type="search" 
+                 class="form-control" 
+                 ng-model="query" 
+                 uib-typeahead="name as tc.name for tc in testCases | filter:$viewValue | limitTo:8" 
+                 typeahead-on-select="setQueryFilterValue($item.name)" 
+                 placeholder="Test Case Filter" 
+              />  
+            </div>
+            <div class="col-sm-2 checkbox">
+               <label for="excludeFilter"><input type="checkbox" id="excludeFilter" ng-model="excludeFilter" ng-checked="excludeFilter"><code> Exclude</code></label>
+            </div>
+        </div>
+      </div>
+
     <ul class="list-group">
         <a 
             class="list-group-item" 
@@ -41,15 +51,17 @@
               'list-group-item-success': tc.result == 'Passed',
               'list-group-item-danger': tc.result == 'Failed',
               'list-group-item-warning': tc.result == 'Skipped',
-              'list-group-item-info': tc.result == 'Inconclusive'
+              'list-group-item-info': tc.result == 'Inconclusive',
+              'selected': tc.id === currentTestCase.id
             }" 
             ng-click="openTestCase(tc)" 
-            ng-repeat="tc in testCases | filter: query | filter: testCaseFilter"
+            ng-repeat="tc in testCases | filter : testCaseFilter | filter: textFilter"
         >
             <small>{{tc.name}}</small>
         </a>
     </ul>
 </div>
+
 <div class="col-md-8">
     <div class="page-header">
         <h3 class="test-case-name">
