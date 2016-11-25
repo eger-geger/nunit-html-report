@@ -33,13 +33,14 @@
                  type="search" 
                  class="form-control" 
                  ng-model="query" 
+                 ng-change="saveQueryState()"
                  uib-typeahead="name as tc.name for tc in testCases | filter:$viewValue | limitTo:8" 
                  typeahead-on-select="setQueryFilterValue($item.name)" 
                  placeholder="Test Case Filter" 
               />  
             </div>
             <div class="col-sm-2 excludeCheckbox">
-               <label for="excludefilter"><input type="checkbox" id="excludefilter" ng-model="excludeFilter" ng-attr-checked="excludeFilter" class="checkbox-inline"><code>Exclude</code></label>
+               <label for="excludefilter"><input type="checkbox" id="excludefilter" ng-model="excludeFilter" ng-change="saveExcludeFilterState()" class="checkbox-inline"><code>Exclude</code></label>
             </div>
         </div>
       </div>
@@ -55,7 +56,7 @@
               'selected': tc.id === currentTestCase.id
             }" 
             ng-click="openTestCase(tc)" 
-            ng-repeat="tc in testCases | filter : testCaseTextFilter | filter: textFilter"
+            ng-repeat="tc in testCases | filter : testCaseResultFilter | filter: testCaseTextFilter"
         >
             <small>{{tc.name}}</small>
         </a>
