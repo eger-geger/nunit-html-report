@@ -2,10 +2,10 @@ var RESULT_TYPE_ANY = "Any";
 
 function DashboardController($scope, $location, $routeParams, StateStorage, reportAdapter) {
 	
-	$scope.testCaseTextFilter = function(testCase) {
+	$scope.testCaseResultFilter = function(testCase) {
         return $scope.isResultTypeActive(testCase.result) || $scope.isResultTypeAny();
     }
-    $scope.textFilter = function(testCase) {
+    $scope.testCaseTextFilter = function(testCase) {
         matches = testCase.name.indexOf($scope.query) !== -1 || testCase.getMessage().indexOf($scope.query) !== -1
         return $scope.excludeFilter ? !matches : matches;    
     }
@@ -31,10 +31,16 @@ function DashboardController($scope, $location, $routeParams, StateStorage, repo
     };
 
     $scope.openTestCase = function(testCase) {
-        StateStorage.put('query', $scope.query);
-        StateStorage.put('exclude', $scope.excludeFilter);
         $location.path('testcase/' + testCase.id);
     };
+
+    $scope.saveQueryState = function(){
+        StateStorage.put('query', $scope.query);
+    }
+
+    $scope.saveExcludeFilterState = function(){
+        StateStorage.put('exclude', $scope.excludeFilter);
+    }
 
     $scope.setQueryFilterValue = function(item){
         $scope.query = item;
