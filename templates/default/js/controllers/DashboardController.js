@@ -2,7 +2,7 @@ var RESULT_TYPE_ANY = "Any";
 
 function DashboardController($scope, $location, $routeParams, StateStorage, reportAdapter) {
 	
-	$scope.testCaseFilter = function(testCase) {
+	$scope.testCaseTextFilter = function(testCase) {
         return $scope.isResultTypeActive(testCase.result) || $scope.isResultTypeAny();
     }
     $scope.textFilter = function(testCase) {
@@ -30,7 +30,6 @@ function DashboardController($scope, $location, $routeParams, StateStorage, repo
         return StateStorage.get('ActiveResultType') || RESULT_TYPE_ANY;
     };
 
-    $scope.getlistbyMessage 
     $scope.openTestCase = function(testCase) {
         StateStorage.put('query', $scope.query);
         StateStorage.put('exclude', $scope.excludeFilter);
@@ -60,7 +59,6 @@ function DashboardController($scope, $location, $routeParams, StateStorage, repo
 
     $scope.query = StateStorage.get('query') || '';
     $scope.excludeFilter = StateStorage.get('exclude') || false;
-    console.log($scope.query);
 }
 
 module.exports = ['$scope', '$location', '$routeParams', 'StateStorage', 'ReportAdapter', DashboardController];
